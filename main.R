@@ -29,7 +29,7 @@ genders = c("Unknown",
 
 
 # ------------------------- Category -> Number -------------------------
-data$OutcomeType = numerize(data$OutcomeType, outcomeTypes, 0:length(outcomeTypes));
+# data$OutcomeType = numerize(data$OutcomeType, outcomeTypes, 0:length(outcomeTypes));
 data$AnimalType = numerize(data$AnimalType, animalTypes, 0:length(animalTypes));
 data$SexuponOutcome = numerize(data$SexuponOutcome, genders, 0:length(genders));
 
