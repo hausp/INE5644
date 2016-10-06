@@ -46,10 +46,6 @@ data$AgeuponOutcome = ages;
 
 data = rename(data, "AgeuponOutcome", "DaysuponOutcome");
 
-# ------------------------- Null treatment -------------------------
-data$SexuponOutcome[sapply(data$SexuponOutcome, is.na)] = 0;
-data$DaysuponOutcome[sapply(data$DaysuponOutcome, is.null)] = 0;
-
 
 # ------------------------- DateTime -> timestamp -------------------------
 data$DateTime = lapply(data$DateTime, {function(str) {
@@ -57,10 +53,58 @@ data$DateTime = lapply(data$DateTime, {function(str) {
 }});
 
 
+# ------------------------- Color analysis -------------------------
+placeholder = "ZZZZ";
+
+pairs = lapply(data$Color, {function(str) {
+	p = strsplit(as.character(str), "/");
+	if (is.na(p[[1]][2]))
+		p[[1]][2] = placeholder;
+	p;
+}});
+
+data$Color = lapply(pairs, {function(pair) {
+	ifelse(pair[[1]][1] < pair[[1]][2],
+		pair[[1]][1],
+		pair[[1]][2])
+}});
+
+data$Color2 = lapply(pairs, {function(pair) {
+	ifelse(pair[[1]][1] < pair[[1]][2],
+		pair[[1]][2],
+		pair[[1]][1])
+}});
+
+data = rename(data, "Color", "Color1");
+
+
+# ------------------------- IsMixedColor -------------------------
+data$IsMixedColor = lapply(pairs, {function(pair) {
+	ifelse(pair[[1]][2] == placeholder, 0, 1);
+}});
+
+
+
+# ------------------------- Breed analysis -------------------------
+data$Breed = lapply(data$Breed, {function(str) {
+	as.integer(grepl("Mix|/", str));
+}});
+
+data = rename(data, "Breed", "IsMixedBreed");
+
+
+# ------------------------- Null treatment -------------------------
+data$SexuponOutcome[sapply(data$SexuponOutcome, is.na)] = 0;
+data$DaysuponOutcome[sapply(data$DaysuponOutcome, is.null)] = 0;
+data$Color2[sapply(data$Color2, {function(str) {
+	str == placeholder;
+}})] = "";
+
+
 # ------------------------- Normalization -------------------------
-data$DateTime = normalize(unlist(data$DateTime));
-data$OutcomeType = normalize(as.numeric(data$OutcomeType));
-data$SexuponOutcome = normalize(as.numeric(data$SexuponOutcome));
+# data$DateTime = normalize(unlist(data$DateTime));
+# data$OutcomeType = normalize(as.numeric(data$OutcomeType));
+# data$SexuponOutcome = normalize(as.numeric(data$SexuponOutcome));
 data$DaysuponOutcome = normalize(unlist(data$DaysuponOutcome));
 
 
