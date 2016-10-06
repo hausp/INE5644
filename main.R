@@ -24,13 +24,21 @@ genders = c("Unknown",
 			"Spayed Female");
 
 
+# ------------------------- Useless field removal -------------------------
+# data$outcomeSubtype = NULL;
+
+
 # ------------------------- Category -> Number -------------------------
 data$OutcomeType = numerize(data$OutcomeType, outcomeTypes, 0:length(outcomeTypes));
 data$AnimalType = numerize(data$AnimalType, animalTypes, 0:length(animalTypes));
 data$SexuponOutcome = numerize(data$SexuponOutcome, genders, 0:length(genders));
 
 
-# ------------------- AgeuponOutcome -> DaysuponOutcome -------------------
+# ------------------- SexuponOutcome -> SexUponOutcome -------------------
+data = rename(data, "SexuponOutcome", "SexUponOutcome");
+
+
+# ------------------- AgeuponOutcome -> DaysUponOutcome -------------------
 ages = data$AgeuponOutcome;
 # ages = sub("years", "* 365", ages, perl=T);
 ages = sub("year", "* 365", ages, perl=T);
@@ -44,13 +52,21 @@ ages = lapply(ages, {function(str) {
 }});
 data$AgeuponOutcome = ages;
 
-data = rename(data, "AgeuponOutcome", "DaysuponOutcome");
+data = rename(data, "AgeuponOutcome", "DaysUponOutcome");
 
 
 # ------------------------- DateTime -> timestamp -------------------------
 data$DateTime = lapply(data$DateTime, {function(str) {
 	as.numeric(as.POSIXct(str));
 }});
+
+
+# ----------------------- Name analysis (HasName) -----------------------
+data$Name = lapply(data$Name, {function(str) {
+	as.integer(str != "");
+}});
+
+data = rename(data, "Name", "HasName");
 
 
 # ------------------------- Color analysis -------------------------
@@ -84,8 +100,7 @@ data$IsMixedColor = lapply(pairs, {function(pair) {
 }});
 
 
-
-# ------------------------- Breed analysis -------------------------
+# ---------------------- Breed analysis (IsMixedBreed) ----------------------
 data$Breed = lapply(data$Breed, {function(str) {
 	as.integer(grepl("Mix|/", str));
 }});
@@ -94,8 +109,8 @@ data = rename(data, "Breed", "IsMixedBreed");
 
 
 # ------------------------- Null treatment -------------------------
-data$SexuponOutcome[sapply(data$SexuponOutcome, is.na)] = 0;
-data$DaysuponOutcome[sapply(data$DaysuponOutcome, is.null)] = 0;
+data$SexUponOutcome[sapply(data$SexUponOutcome, is.na)] = 0;
+data$DaysUponOutcome[sapply(data$DaysUponOutcome, is.null)] = 0;
 data$Color2[sapply(data$Color2, {function(str) {
 	str == placeholder;
 }})] = "";
@@ -104,8 +119,8 @@ data$Color2[sapply(data$Color2, {function(str) {
 # ------------------------- Normalization -------------------------
 # data$DateTime = normalize(unlist(data$DateTime));
 # data$OutcomeType = normalize(as.numeric(data$OutcomeType));
-# data$SexuponOutcome = normalize(as.numeric(data$SexuponOutcome));
-data$DaysuponOutcome = normalize(unlist(data$DaysuponOutcome));
+# data$SexUponOutcome = normalize(as.numeric(data$SexUponOutcome));
+data$DaysUponOutcome = normalize(unlist(data$DaysUponOutcome));
 
 
 # Save
