@@ -4,10 +4,12 @@ bar = function(data, title) {
 }
 
 # HasName
-hist(unlist(data$HasName));
+# hist(unlist(data$HasName));
+bar(data$HasName, "HasName");
 
-# DateTime
-hist(unlist(data$DateTime));
+# Weekday
+levels(data$DateTime) = days;
+bar(data$DateTime, "Weekday");
 
 # OutcomeType
 levels(data$OutcomeType) = outcomeTypes;

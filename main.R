@@ -23,6 +23,7 @@ genders = c("Unknown",
 			"Neutered Male",
 			"Spayed Female");
 
+days = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
 # ------------------------- Useless field removal -------------------------
 # data$outcomeSubtype = NULL;
@@ -55,10 +56,13 @@ data$AgeuponOutcome = ages;
 data = rename(data, "AgeuponOutcome", "DaysUponOutcome");
 
 
-# ------------------------- DateTime -> timestamp -------------------------
+# ------------------------- timestamp -> weekday -------------------------
 data$DateTime = lapply(data$DateTime, {function(str) {
-	as.numeric(as.POSIXct(str));
+	# as.numeric(as.POSIXct(str)$wday);
+	weekdays(as.Date(str));
 }});
+
+data$DateTime = numerize(unlist(data$DateTime), days, 0:length(days));
 
 
 # ----------------------- Name analysis (HasName) -----------------------
