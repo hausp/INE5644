@@ -26,13 +26,16 @@ genders = c("Unknown",
 days = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
 # ------------------------- Useless field removal -------------------------
-# data$outcomeSubtype = NULL;
+data$AnimalID = NULL;
 
 
 # ------------------------- Category -> Number -------------------------
 # data$OutcomeType = numerize(data$OutcomeType, outcomeTypes, 0:length(outcomeTypes));
-data$AnimalType = numerize(data$AnimalType, animalTypes, 0:length(animalTypes));
-data$SexuponOutcome = numerize(data$SexuponOutcome, genders, 0:length(genders));
+# data$AnimalType = numerize(data$AnimalType, animalTypes, 0:length(animalTypes));
+# data$SexuponOutcome = numerize(data$SexuponOutcome, genders, 0:length(genders));
+data$SexuponOutcome = lapply(data$SexuponOutcome, {function(str) {
+	str = clean_string(str);
+}});
 
 
 # ------------------- SexuponOutcome -> SexUponOutcome -------------------
@@ -67,7 +70,7 @@ data = rename(data, "DateTime", "Weekday");
 
 # ----------------------- Name analysis (HasName) -----------------------
 data$Name = lapply(data$Name, {function(str) {
-	as.integer(str != "");
+	ifelse(str != "", "true", "false");
 }});
 
 data = rename(data, "Name", "HasName");
@@ -101,7 +104,7 @@ data = rename(data, "Color", "Color1");
 
 # ------------------------- IsMixedColor -------------------------
 data$IsMixedColor = lapply(pairs, {function(pair) {
-	ifelse(pair[[1]][2] == placeholder, 0, 1);
+	ifelse(pair[[1]][2] == placeholder, "false", "true");
 }});
 
 
