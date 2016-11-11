@@ -1,0 +1,3044 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     refined_train-weka.filters.unsupervised.attribute.Remove-R4
+Instances:    26729
+Attributes:   10
+              HasName
+              Weekday
+              OutcomeType
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 28.7 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16086               60.1818 %
+Incorrectly Classified Instances     10643               39.8182 %
+Kappa statistic                          0.4013
+Mean absolute error                      0.1818
+Root mean squared error                  0.3318
+Relative absolute error                 67.0233 %
+Root relative squared error             90.1191 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.385    0.123    0.406      0.385    0.395      0.268    0.780     0.380     Return_to_owner
+                 0.165    0.026    0.285      0.165    0.209      0.181    0.758     0.194     Euthanasia
+                 0.742    0.262    0.656      0.742    0.697      0.472    0.833     0.749     Adoption
+                 0.635    0.175    0.663      0.635    0.649      0.465    0.791     0.727     Transfer
+                 0.046    0.003    0.107      0.046    0.064      0.065    0.723     0.059     Died
+Weighted Avg.    0.602    0.191    0.588      0.602    0.593      0.413    0.803     0.638     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1845  182 1884  870    5 |    a = Return_to_owner
+  324  256  220  742   13 |    b = Euthanasia
+ 1408   68 7992 1291   10 |    c = Adoption
+  961  374 2056 5984   47 |    d = Transfer
+    9   19   28  132    9 |    e = Died
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.HoeffdingTree -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation:     refined_train-weka.filters.unsupervised.attribute.Remove-R4
+Instances:    26729
+Attributes:   10
+              HasName
+              Weekday
+              OutcomeType
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+SexUponOutcome = neuteredmale: Adoption (5223.000) NB1 NB adaptive1
+SexUponOutcome = spayedfemale: Adoption (5187.000) NB2 NB adaptive2
+SexUponOutcome = intactmale: Transfer (2335.000) NB3 NB adaptive3
+SexUponOutcome = intactfemale: Transfer (2551.000) NB4 NB adaptive4
+SexUponOutcome = unknown: Transfer (956.000) NB5 NB adaptive5
+
+Time taken to build model: 0.57 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16776               62.7633 %
+Incorrectly Classified Instances      9953               37.2367 %
+Kappa statistic                          0.4259
+Mean absolute error                      0.1839
+Root mean squared error                  0.3246
+Relative absolute error                 67.7977 %
+Root relative squared error             88.1481 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.372    0.097    0.456      0.372    0.410      0.299    0.801     0.425     Return_to_owner
+                 0.099    0.008    0.425      0.099    0.161      0.184    0.741     0.203     Euthanasia
+                 0.862    0.363    0.616      0.862    0.718      0.494    0.821     0.712     Adoption
+                 0.590    0.105    0.754      0.590    0.662      0.519    0.786     0.716     Transfer
+                 0.000    0.000    0.000      0.000    0.000      -0.002   0.771     0.023     Died
+Weighted Avg.    0.628    0.201    0.620      0.628    0.605      0.446    0.800     0.628     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1782   52 2508  442    2 |    a = Return_to_owner
+  315  154  322  764    0 |    b = Euthanasia
+  980   57 9284  447    1 |    c = Adoption
+  825   93 2941 5556    7 |    d = Transfer
+   10    6   25  156    0 |    e = Died
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     refined_train-weka.filters.unsupervised.attribute.Remove-R4
+Instances:    26729
+Attributes:   10
+              HasName
+              Weekday
+              OutcomeType
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+DaysUponOutcome <= 28: Transfer (2277.0/161.0)
+DaysUponOutcome > 28
+|   HasName = true
+|   |   DaysUponOutcome <= 240
+|   |   |   SexUponOutcome = neuteredmale: Adoption (2424.0/485.0)
+|   |   |   SexUponOutcome = spayedfemale: Adoption (2291.0/367.0)
+|   |   |   SexUponOutcome = intactmale
+|   |   |   |   AnimalType = Dog: Transfer (241.0/87.0)
+|   |   |   |   AnimalType = Cat
+|   |   |   |   |   DaysUponOutcome <= 35: Transfer (183.0/62.0)
+|   |   |   |   |   DaysUponOutcome > 35
+|   |   |   |   |   |   Weekday <= 0: Adoption (24.0/6.0)
+|   |   |   |   |   |   Weekday > 0: Transfer (141.0/52.0)
+|   |   |   SexUponOutcome = intactfemale: Transfer (636.0/239.0)
+|   |   |   SexUponOutcome = unknown: Transfer (13.0/2.0)
+|   |   DaysUponOutcome > 240
+|   |   |   SexUponOutcome = neuteredmale
+|   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   AnimalType = Dog: Adoption (1461.0/641.0)
+|   |   |   |   |   AnimalType = Cat
+|   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   Weekday <= 0: Adoption (40.0/11.0)
+|   |   |   |   |   |   |   Weekday > 0: Transfer (167.0/75.0)
+|   |   |   |   |   |   Weekday > 5: Adoption (33.0/11.0)
+|   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   DaysUponOutcome <= 3650
+|   |   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   |   Weekday <= 0: Adoption (578.0/312.0)
+|   |   |   |   |   |   |   |   Weekday > 0: Return_to_owner (2266.46/1263.0)
+|   |   |   |   |   |   |   Weekday > 5: Adoption (505.0/245.0)
+|   |   |   |   |   |   DaysUponOutcome > 3650: Return_to_owner (194.0/66.0)
+|   |   |   |   |   AnimalType = Cat
+|   |   |   |   |   |   DaysUponOutcome <= 3650
+|   |   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   |   Color1 = brown: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = creamtabby
+|   |   |   |   |   |   |   |   |   Weekday <= 2
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (9.0/4.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = true: Transfer (6.0)
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = false: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = blue
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920
+|   |   |   |   |   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true: Adoption (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Return_to_owner (8.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 1: Transfer (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2190: Transfer (12.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2190: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Adoption (3.0)
+|   |   |   |   |   |   |   |   Color1 = bluecream: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = tan: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = black
+|   |   |   |   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Adoption (22.0/8.0)
+|   |   |   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 1: Transfer (15.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true: Transfer (21.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Transfer (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Return_to_owner (12.0/4.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920: Return_to_owner (14.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Return_to_owner (9.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Adoption (7.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 4: Transfer (9.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false: Transfer (21.0/11.0)
+|   |   |   |   |   |   |   |   Color1 = bluetabby
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (10.0/4.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (20.0/7.0)
+|   |   |   |   |   |   |   |   Color1 = browntabby
+|   |   |   |   |   |   |   |   |   Weekday <= 0: Adoption (20.0/8.0)
+|   |   |   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true: Transfer (40.0/24.0)
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (7.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Return_to_owner (11.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Adoption (9.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2555
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2555: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2555: Transfer (14.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2555: Adoption (4.0)
+|   |   |   |   |   |   |   |   Color1 = red: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = white
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   Weekday <= 3: Adoption (3.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 3: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = silver: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = cream: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = orangetabby: Adoption (115.0/67.0)
+|   |   |   |   |   |   |   |   Color1 = brownbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = chocolate: Adoption (2.0)
+|   |   |   |   |   |   |   |   Color1 = calico: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = torbie: Return_to_owner (1.0)
+|   |   |   |   |   |   |   |   Color1 = yellow: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = tricolor: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = tortie: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = gray
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = buff: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = sealpoint: Transfer (20.0/9.0)
+|   |   |   |   |   |   |   |   Color1 = fawn: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = flamepoint
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825
+|   |   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 1: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Adoption (8.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = blacktabby: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = bluemerle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = sable: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = brownmerle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = browntiger: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = liver: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluepoint: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = apricot: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = lynxpoint
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2190
+|   |   |   |   |   |   |   |   |   |   Weekday <= 3: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 3: Adoption (5.0/1.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 2190: Return_to_owner (4.0)
+|   |   |   |   |   |   |   |   Color1 = redtick: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = lilacpoint: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = tortiepoint: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = graytabby: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = bluetiger: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = yellowbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = gold: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluetick: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = blacksmoke: Transfer (2.0)
+|   |   |   |   |   |   |   |   Color1 = redmerle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = calicopoint: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = blackbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = orange: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   Color1 = chocolatepoint: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = silvertabby: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = agouti: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluesmoke: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = livertick: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = pink: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = silverlynxpoint: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = blacktiger: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = orangetiger: Transfer (0.0)
+|   |   |   |   |   |   |   Weekday > 5: Adoption (101.0/34.0)
+|   |   |   |   |   |   DaysUponOutcome > 3650
+|   |   |   |   |   |   |   DaysUponOutcome <= 5110: Adoption (59.0/34.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 5110: Euthanasia (17.0/10.0)
+|   |   |   SexUponOutcome = spayedfemale
+|   |   |   |   AnimalType = Dog
+|   |   |   |   |   DaysUponOutcome <= 730: Adoption (2090.0/920.0)
+|   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   DaysUponOutcome <= 4380
+|   |   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Adoption (137.0/69.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460: Return_to_owner (193.0/106.0)
+|   |   |   |   |   |   |   |   Weekday > 0: Return_to_owner (1281.41/703.0)
+|   |   |   |   |   |   |   Weekday > 5: Adoption (321.0/160.0)
+|   |   |   |   |   |   DaysUponOutcome > 4380: Return_to_owner (93.0/25.0)
+|   |   |   |   AnimalType = Cat
+|   |   |   |   |   Weekday <= 0: Adoption (204.0/59.0)
+|   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   DaysUponOutcome <= 2190
+|   |   |   |   |   |   |   |   Color1 = brown: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = creamtabby
+|   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2: Adoption (4.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = blue
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 365: Adoption (6.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 365: Transfer (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460: Adoption (3.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 330: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 330
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Transfer (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Adoption (4.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = bluecream
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Adoption (2.0)
+|   |   |   |   |   |   |   |   Color1 = tan: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = black
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (30.0/14.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (91.0/40.0)
+|   |   |   |   |   |   |   |   Color1 = bluetabby
+|   |   |   |   |   |   |   |   |   Weekday <= 3: Transfer (26.0/13.0)
+|   |   |   |   |   |   |   |   |   Weekday > 3: Adoption (14.0/6.0)
+|   |   |   |   |   |   |   |   Color1 = browntabby
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 300: Adoption (4.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 300: Transfer (105.0/48.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 4: Return_to_owner (4.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 4: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = red: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = white: Adoption (8.0/3.0)
+|   |   |   |   |   |   |   |   Color1 = silver: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = cream: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = orangetabby
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Adoption (11.0/5.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095: Transfer (14.0/4.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = brownbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = chocolate: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = calico
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Adoption (4.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   Weekday <= 1
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (41.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Transfer (15.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Adoption (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = torbie
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   Weekday <= 4: Transfer (26.0/10.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 4: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = yellow: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = tricolor: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = tortie
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 330
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 1: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 330
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (9.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Transfer (17.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Transfer (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 4: Adoption (12.0/5.0)
+|   |   |   |   |   |   |   |   Color1 = gray
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   Color1 = buff: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = sealpoint: Adoption (4.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = fawn: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = flamepoint
+|   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = blacktabby: Return_to_owner (1.0)
+|   |   |   |   |   |   |   |   Color1 = bluemerle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = sable: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = brownmerle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = browntiger: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = liver: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluepoint: Transfer (1.0)
+|   |   |   |   |   |   |   |   Color1 = apricot: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = lynxpoint
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095: Adoption (10.0/5.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = redtick: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = lilacpoint: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = tortiepoint: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = graytabby: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = bluetiger: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = yellowbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = gold: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluetick: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = blacksmoke: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = redmerle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = calicopoint
+|   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2: Transfer (2.0)
+|   |   |   |   |   |   |   |   Color1 = blackbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = orange: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = chocolatepoint: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = silvertabby: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = agouti: Return_to_owner (1.0)
+|   |   |   |   |   |   |   |   Color1 = bluesmoke: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = livertick: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = pink: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = silverlynxpoint: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = blacktiger: Transfer (0.0)
+|   |   |   |   |   |   |   |   Color1 = orangetiger: Transfer (0.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 2190
+|   |   |   |   |   |   |   |   Color1 = brown: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = creamtabby: Return_to_owner (3.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = blue
+|   |   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2555: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2555: Return_to_owner (6.0/2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 4: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = bluecream: Return_to_owner (1.0)
+|   |   |   |   |   |   |   |   Color1 = tan: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = black
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 3285
+|   |   |   |   |   |   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 3: Adoption (7.0/4.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 3285
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (8.0/3.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (10.0/5.0)
+|   |   |   |   |   |   |   |   Color1 = bluetabby: Adoption (7.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = browntabby
+|   |   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 3285
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 3285
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Adoption (9.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2555: Transfer (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2555
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 3285: Adoption (4.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 3285: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = red: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = white: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = silver: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = cream: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = orangetabby: Adoption (9.0/4.0)
+|   |   |   |   |   |   |   |   Color1 = brownbrindle: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = chocolate: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = calico
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Return_to_owner (3.0/2.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (7.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 4: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = torbie
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 4015
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2: Adoption (4.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 4015: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = yellow: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = tricolor: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = tortie
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1: Adoption (20.0/11.0)
+|   |   |   |   |   |   |   |   Color1 = gray: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = buff: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = sealpoint: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = fawn: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = flamepoint: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = blacktabby: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluemerle: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = sable: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = brownmerle: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = browntiger: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = liver: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluepoint: Adoption (1.0)
+|   |   |   |   |   |   |   |   Color1 = apricot: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = lynxpoint: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   Color1 = redtick: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = lilacpoint: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = tortiepoint: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = graytabby
+|   |   |   |   |   |   |   |   |   Weekday <= 4: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   |   Weekday > 4: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = bluetiger: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = yellowbrindle: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = gold: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluetick: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = blacksmoke: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = redmerle: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = calicopoint: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = blackbrindle: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = orange: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Color1 = chocolatepoint: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = silvertabby: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = agouti: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = bluesmoke: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = livertick: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = pink: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = silverlynxpoint: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = blacktiger: Adoption (0.0)
+|   |   |   |   |   |   |   |   Color1 = orangetiger: Adoption (0.0)
+|   |   |   |   |   |   Weekday > 5: Adoption (188.0/64.0)
+|   |   |   SexUponOutcome = intactmale
+|   |   |   |   Breed = mixed
+|   |   |   |   |   Color1 = brown
+|   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   DaysUponOutcome <= 730: Return_to_owner (33.0/17.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 730: Euthanasia (32.0/19.0)
+|   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Transfer (18.0/7.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Return_to_owner (6.0/2.0)
+|   |   |   |   |   |   |   Weekday > 5: Return_to_owner (8.0/2.0)
+|   |   |   |   |   Color1 = creamtabby: Transfer (2.0)
+|   |   |   |   |   Color1 = blue
+|   |   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   |   IsMixedColor = true: Return_to_owner (55.0/19.0)
+|   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 365: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 365: Euthanasia (4.0/1.0)
+|   |   |   |   |   |   AnimalType = Cat: Transfer (4.0/1.0)
+|   |   |   |   |   Color1 = bluecream: Return_to_owner (3.0/1.0)
+|   |   |   |   |   Color1 = tan
+|   |   |   |   |   |   DaysUponOutcome <= 1095
+|   |   |   |   |   |   |   IsMixedColor = true: Transfer (28.0/12.0)
+|   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 365: Transfer (6.0/1.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 365: Return_to_owner (10.0/2.0)
+|   |   |   |   |   |   DaysUponOutcome > 1095
+|   |   |   |   |   |   |   DaysUponOutcome <= 5110
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 2190
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false: Euthanasia (3.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 2190: Return_to_owner (18.0/4.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 5110: Adoption (2.0)
+|   |   |   |   |   Color1 = black
+|   |   |   |   |   |   AnimalType = Dog: Return_to_owner (200.0/97.0)
+|   |   |   |   |   |   AnimalType = Cat: Transfer (17.0/5.0)
+|   |   |   |   |   Color1 = bluetabby
+|   |   |   |   |   |   Weekday <= 5: Transfer (5.0/2.0)
+|   |   |   |   |   |   Weekday > 5: Return_to_owner (2.0)
+|   |   |   |   |   Color1 = browntabby: Transfer (10.0/1.0)
+|   |   |   |   |   Color1 = red
+|   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   Color2 = white
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 730
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   |   |   |   |   |   Weekday <= 1: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (4.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (6.0/3.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (16.0/3.0)
+|   |   |   |   |   |   |   Color2 = tan: Return_to_owner (4.0)
+|   |   |   |   |   |   |   Color2 = red: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = brown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = yellowbrindle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = tortie: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = brownbrindle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = redtick: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = gray: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = redmerle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = fawn: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = tricolor: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = orange: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = yellow: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluetiger: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = silver: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = sable: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = tortiepoint: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = buff: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = gold: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = calico: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluetick: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = cream: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluemerle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = silvertabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluetabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blue: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = browntabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = black: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = orangetabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = chocolate: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blackbrindle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blacksmoke: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = brownmerle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = sealpoint: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blacktabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = lynxpoint: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = torbie: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = liver: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = ruddy: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = graytabby: Return_to_owner (0.0)
+|   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   DaysUponOutcome <= 1825: Transfer (6.0/2.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1825: Return_to_owner (7.0/2.0)
+|   |   |   |   |   Color1 = white
+|   |   |   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   |   |   DaysUponOutcome <= 330: Transfer (2.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 330
+|   |   |   |   |   |   |   |   Weekday <= 3: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   |   Weekday > 3: Adoption (3.0/1.0)
+|   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   DaysUponOutcome <= 1460: Return_to_owner (21.0/7.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1460: Transfer (5.0/1.0)
+|   |   |   |   |   Color1 = silver: Return_to_owner (4.0/1.0)
+|   |   |   |   |   Color1 = cream: Transfer (14.0/4.0)
+|   |   |   |   |   Color1 = orangetabby
+|   |   |   |   |   |   DaysUponOutcome <= 2555: Transfer (10.0/3.0)
+|   |   |   |   |   |   DaysUponOutcome > 2555: Euthanasia (2.0)
+|   |   |   |   |   Color1 = brownbrindle
+|   |   |   |   |   |   DaysUponOutcome <= 1095
+|   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   |   |   |   |   Weekday <= 2
+|   |   |   |   |   |   |   |   |   |   Weekday <= 0: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 0: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   Weekday <= 4: Euthanasia (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 4: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 365: Transfer (9.0/3.0)
+|   |   |   |   |   |   |   IsMixedColor = false: Transfer (10.0/4.0)
+|   |   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (15.0/6.0)
+|   |   |   |   |   Color1 = chocolate
+|   |   |   |   |   |   DaysUponOutcome <= 730: Euthanasia (8.0/5.0)
+|   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (9.0/2.0)
+|   |   |   |   |   Color1 = calico: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = torbie: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = yellow
+|   |   |   |   |   |   Weekday <= 4: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   Weekday > 4: Transfer (2.0)
+|   |   |   |   |   Color1 = tricolor
+|   |   |   |   |   |   IsMixedColor = true: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   DaysUponOutcome <= 1825: Transfer (18.0/8.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1825: Return_to_owner (3.0)
+|   |   |   |   |   Color1 = tortie: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = gray
+|   |   |   |   |   |   DaysUponOutcome <= 1460: Transfer (4.0)
+|   |   |   |   |   |   DaysUponOutcome > 1460: Return_to_owner (7.0/1.0)
+|   |   |   |   |   Color1 = buff
+|   |   |   |   |   |   DaysUponOutcome <= 365: Adoption (2.0/1.0)
+|   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   IsMixedColor = true: Transfer (2.0)
+|   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   Weekday <= 3: Transfer (5.0/1.0)
+|   |   |   |   |   |   |   |   Weekday > 3: Return_to_owner (3.0/1.0)
+|   |   |   |   |   Color1 = sealpoint: Transfer (2.0)
+|   |   |   |   |   Color1 = fawn
+|   |   |   |   |   |   IsMixedColor = true: Return_to_owner (7.0/2.0)
+|   |   |   |   |   |   IsMixedColor = false: Euthanasia (3.0/1.0)
+|   |   |   |   |   Color1 = flamepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blacktabby: Euthanasia (1.0)
+|   |   |   |   |   Color1 = bluemerle: Return_to_owner (1.0)
+|   |   |   |   |   Color1 = sable: Return_to_owner (9.0/4.0)
+|   |   |   |   |   Color1 = brownmerle
+|   |   |   |   |   |   Weekday <= 4: Transfer (3.0/1.0)
+|   |   |   |   |   |   Weekday > 4: Return_to_owner (3.0/1.0)
+|   |   |   |   |   Color1 = browntiger: Transfer (1.0)
+|   |   |   |   |   Color1 = liver: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = apricot: Transfer (1.0)
+|   |   |   |   |   Color1 = lynxpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = redtick: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = lilacpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = tortiepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = graytabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluetiger: Euthanasia (1.0)
+|   |   |   |   |   Color1 = yellowbrindle: Transfer (1.0)
+|   |   |   |   |   Color1 = gold
+|   |   |   |   |   |   Weekday <= 4: Return_to_owner (2.0)
+|   |   |   |   |   |   Weekday > 4: Euthanasia (4.0/2.0)
+|   |   |   |   |   Color1 = bluetick
+|   |   |   |   |   |   Weekday <= 3: Transfer (2.0)
+|   |   |   |   |   |   Weekday > 3: Return_to_owner (2.0)
+|   |   |   |   |   Color1 = blacksmoke: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = redmerle: Return_to_owner (3.0/1.0)
+|   |   |   |   |   Color1 = calicopoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blackbrindle: Return_to_owner (10.0/3.0)
+|   |   |   |   |   Color1 = orange: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = chocolatepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = silvertabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = agouti: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluesmoke: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = livertick: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = pink: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = silverlynxpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blacktiger: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = orangetiger: Return_to_owner (0.0)
+|   |   |   |   Breed = cairnterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = beagle: Return_to_owner (0.0)
+|   |   |   |   Breed = englishfoxhound: Return_to_owner (0.0)
+|   |   |   |   Breed = domesticlonghair: Transfer (1.0)
+|   |   |   |   Breed = chihuahuashorthair: Euthanasia (2.0/1.0)
+|   |   |   |   Breed = lhasaapso: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = pitbull
+|   |   |   |   |   Color1 = brown: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = creamtabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blue: Return_to_owner (6.0/2.0)
+|   |   |   |   |   Color1 = bluecream: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = tan: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = black: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluetabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = browntabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = red: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = white: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = silver: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = cream: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = orangetabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = brownbrindle: Euthanasia (2.0)
+|   |   |   |   |   Color1 = chocolate: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = calico: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = torbie: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = yellow: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = tricolor: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = tortie: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = gray: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = buff: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = sealpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = fawn: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = flamepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blacktabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluemerle: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = sable: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = brownmerle: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = browntiger: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = liver: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = apricot: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = lynxpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = redtick: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = lilacpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = tortiepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = graytabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluetiger: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = yellowbrindle: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = gold: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluetick: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blacksmoke: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = redmerle: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = calicopoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blackbrindle: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = orange: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = chocolatepoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = silvertabby: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = agouti: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = bluesmoke: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = livertick: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = pink: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = silverlynxpoint: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = blacktiger: Return_to_owner (0.0)
+|   |   |   |   |   Color1 = orangetiger: Return_to_owner (0.0)
+|   |   |   |   Breed = dachshundlonghair: Transfer (1.0)
+|   |   |   |   Breed = maltese: Return_to_owner (1.0)
+|   |   |   |   Breed = siberianhusky: Return_to_owner (4.0/1.0)
+|   |   |   |   Breed = greatdane: Return_to_owner (0.0)
+|   |   |   |   Breed = chesabayretr: Return_to_owner (0.0)
+|   |   |   |   Breed = germanshepherd: Return_to_owner (8.0/4.0)
+|   |   |   |   Breed = englishpointer: Return_to_owner (0.0)
+|   |   |   |   Breed = cockerspaniel: Euthanasia (1.0)
+|   |   |   |   Breed = domesticshorthair: Return_to_owner (0.0)
+|   |   |   |   Breed = shihtzu: Transfer (10.0)
+|   |   |   |   Breed = dachshund
+|   |   |   |   |   IsMixedColor = true: Adoption (2.0/1.0)
+|   |   |   |   |   IsMixedColor = false: Return_to_owner (3.07/1.0)
+|   |   |   |   Breed = anatolshepherd: Return_to_owner (0.0)
+|   |   |   |   Breed = labradorretriever: Return_to_owner (7.0/2.0)
+|   |   |   |   Breed = englishbulldog
+|   |   |   |   |   DaysUponOutcome <= 1460: Return_to_owner (3.0)
+|   |   |   |   |   DaysUponOutcome > 1460: Transfer (2.0)
+|   |   |   |   Breed = bassethound: Return_to_owner (2.0)
+|   |   |   |   Breed = boxer: Return_to_owner (4.0/1.0)
+|   |   |   |   Breed = miniaturepoodle: Return_to_owner (1.0)
+|   |   |   |   Breed = dobermanpinsch: Transfer (1.0)
+|   |   |   |   Breed = harrier: Return_to_owner (0.0)
+|   |   |   |   Breed = burmese: Return_to_owner (0.0)
+|   |   |   |   Breed = domesticmediumhair: Return_to_owner (0.0)
+|   |   |   |   Breed = bordercollie: Return_to_owner (0.0)
+|   |   |   |   Breed = vizsla: Return_to_owner (0.0)
+|   |   |   |   Breed = yorkshireterrier: Return_to_owner (1.0)
+|   |   |   |   Breed = bullterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = jackrussellterrier: Return_to_owner (1.0)
+|   |   |   |   Breed = pekingese: Transfer (2.0)
+|   |   |   |   Breed = americanpitbullterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = miniatureschnauzer: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = rottweiler: Return_to_owner (7.0/2.0)
+|   |   |   |   Breed = greatpyrenees: Return_to_owner (0.0)
+|   |   |   |   Breed = australianshepherd: Return_to_owner (1.0)
+|   |   |   |   Breed = greyhound: Transfer (3.0)
+|   |   |   |   Breed = bernesemountaindog: Return_to_owner (0.0)
+|   |   |   |   Breed = chihuahualonghair: Return_to_owner (0.0)
+|   |   |   |   Breed = pembrokewelshcorgi: Return_to_owner (1.0)
+|   |   |   |   Breed = australiancattledog: Return_to_owner (0.0)
+|   |   |   |   Breed = shetlandsheepdog: Transfer (2.0)
+|   |   |   |   Breed = weimaraner: Transfer (2.0)
+|   |   |   |   Breed = miniaturepinscher: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = bostonterrier
+|   |   |   |   |   Weekday <= 2: Euthanasia (2.0/1.0)
+|   |   |   |   |   Weekday > 2: Return_to_owner (3.0/1.0)
+|   |   |   |   Breed = siamese: Return_to_owner (0.0)
+|   |   |   |   Breed = carolinadog: Return_to_owner (0.0)
+|   |   |   |   Breed = goldenretriever: Transfer (6.0/1.0)
+|   |   |   |   Breed = pug: Transfer (4.0)
+|   |   |   |   Breed = dogoargentino: Return_to_owner (0.0)
+|   |   |   |   Breed = cavalierspan: Return_to_owner (1.0)
+|   |   |   |   Breed = staffordshire: Return_to_owner (0.0)
+|   |   |   |   Breed = ratterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = akita: Euthanasia (1.0)
+|   |   |   |   Breed = chowchow: Return_to_owner (0.0)
+|   |   |   |   Breed = americanfoxhound: Return_to_owner (0.0)
+|   |   |   |   Breed = dachshundwirehair: Return_to_owner (0.0)
+|   |   |   |   Breed = parsonrussellterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = bengal: Return_to_owner (0.0)
+|   |   |   |   Breed = dalmatian: Return_to_owner (0.0)
+|   |   |   |   Breed = oldenglishsheepdog: Return_to_owner (0.0)
+|   |   |   |   Breed = americanbulldog: Return_to_owner (0.0)
+|   |   |   |   Breed = catahoula: Return_to_owner (0.0)
+|   |   |   |   Breed = chinesesharpei: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = plotthound: Return_to_owner (0.0)
+|   |   |   |   Breed = germanshorthairpointer: Return_to_owner (0.0)
+|   |   |   |   Breed = rhodridgeback: Euthanasia (1.0)
+|   |   |   |   Breed = britishshorthair: Return_to_owner (0.0)
+|   |   |   |   Breed = bichonfrise: Return_to_owner (0.0)
+|   |   |   |   Breed = pomeranian: Return_to_owner (0.0)
+|   |   |   |   Breed = westhighland: Return_to_owner (0.0)
+|   |   |   |   Breed = treeingtennessebrindle: Return_to_owner (0.0)
+|   |   |   |   Breed = standardpoodle: Adoption (1.0)
+|   |   |   |   Breed = italiangreyhound: Return_to_owner (0.0)
+|   |   |   |   Breed = englishspringerspaniel: Return_to_owner (0.0)
+|   |   |   |   Breed = pointer: Return_to_owner (0.0)
+|   |   |   |   Breed = havanese: Return_to_owner (0.0)
+|   |   |   |   Breed = australiankelpie: Return_to_owner (0.0)
+|   |   |   |   Breed = americanstaffordshireterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = softcoatedwheatenterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = canecorso: Return_to_owner (0.0)
+|   |   |   |   Breed = standardschnauzer: Return_to_owner (0.0)
+|   |   |   |   Breed = bloodhound: Return_to_owner (0.0)
+|   |   |   |   Breed = belgiansheepdog: Return_to_owner (0.0)
+|   |   |   |   Breed = pbgv: Return_to_owner (0.0)
+|   |   |   |   Breed = leonberger: Return_to_owner (0.0)
+|   |   |   |   Breed = welshspringerspaniel: Return_to_owner (0.0)
+|   |   |   |   Breed = brussgriffon: Return_to_owner (0.0)
+|   |   |   |   Breed = bullterrierminiature: Return_to_owner (0.0)
+|   |   |   |   Breed = wirehairfoxterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = shibainu: Return_to_owner (0.0)
+|   |   |   |   Breed = stbernardsmoothcoat: Return_to_owner (0.0)
+|   |   |   |   Breed = toypoodle: Return_to_owner (0.0)
+|   |   |   |   Breed = sphynx: Return_to_owner (1.0)
+|   |   |   |   Breed = borderterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = blackmouthcur: Return_to_owner (0.0)
+|   |   |   |   Breed = americaneskimo: Return_to_owner (0.0)
+|   |   |   |   Breed = airedaleterrier: Transfer (1.0)
+|   |   |   |   Breed = collierough: Return_to_owner (1.0)
+|   |   |   |   Breed = colliesmooth: Return_to_owner (0.0)
+|   |   |   |   Breed = mainecoon: Return_to_owner (0.0)
+|   |   |   |   Breed = tibetanspaniel: Return_to_owner (0.0)
+|   |   |   |   Breed = himalayan: Return_to_owner (0.0)
+|   |   |   |   Breed = novascotiaducktollingretriever: Return_to_owner (0.0)
+|   |   |   |   Breed = norfolkterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = papillon: Return_to_owner (0.0)
+|   |   |   |   Breed = queenslandheeler: Return_to_owner (0.0)
+|   |   |   |   Breed = saluki: Return_to_owner (0.0)
+|   |   |   |   Breed = bullmastiff: Return_to_owner (0.0)
+|   |   |   |   Breed = devonrex: Return_to_owner (0.0)
+|   |   |   |   Breed = bluelacy: Return_to_owner (0.0)
+|   |   |   |   Breed = manx: Return_to_owner (0.0)
+|   |   |   |   Breed = presacanario: Return_to_owner (1.0)
+|   |   |   |   Breed = bulldog: Return_to_owner (1.0)
+|   |   |   |   Breed = brittany: Return_to_owner (1.0)
+|   |   |   |   Breed = snowshoe: Return_to_owner (0.0)
+|   |   |   |   Breed = germanwirehairedpointer: Return_to_owner (0.0)
+|   |   |   |   Breed = persian: Return_to_owner (0.0)
+|   |   |   |   Breed = boerboel: Return_to_owner (0.0)
+|   |   |   |   Breed = pharaohhound: Return_to_owner (0.0)
+|   |   |   |   Breed = englishshepherd: Return_to_owner (0.0)
+|   |   |   |   Breed = dutchshepherd: Return_to_owner (0.0)
+|   |   |   |   Breed = japanesechin: Return_to_owner (0.0)
+|   |   |   |   Breed = russianblue: Return_to_owner (0.0)
+|   |   |   |   Breed = cardiganwelshcorgi: Return_to_owner (0.0)
+|   |   |   |   Breed = finnishspitz: Return_to_owner (0.0)
+|   |   |   |   Breed = bluetickhound: Return_to_owner (0.0)
+|   |   |   |   Breed = frenchbulldog: Return_to_owner (0.0)
+|   |   |   |   Breed = belgianmalinois: Return_to_owner (0.0)
+|   |   |   |   Breed = alaskanhusky: Return_to_owner (0.0)
+|   |   |   |   Breed = keeshond: Return_to_owner (0.0)
+|   |   |   |   Breed = stbernardroughcoat: Return_to_owner (0.0)
+|   |   |   |   Breed = ragdoll: Return_to_owner (0.0)
+|   |   |   |   Breed = redbonehound: Return_to_owner (0.0)
+|   |   |   |   Breed = alaskanmalamute: Return_to_owner (1.0)
+|   |   |   |   Breed = beauceron: Return_to_owner (0.0)
+|   |   |   SexUponOutcome = intactfemale
+|   |   |   |   Breed = mixed
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   Color1 = brown
+|   |   |   |   |   |   |   Color2 = white
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Transfer (57.83/28.38)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2190: Return_to_owner (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2190
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 0: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 0: Euthanasia (6.0/1.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false: Return_to_owner (9.22/4.61)
+|   |   |   |   |   |   |   Color2 = tan: Transfer (4.17/1.7)
+|   |   |   |   |   |   |   Color2 = red: Return_to_owner (1.39/0.2)
+|   |   |   |   |   |   |   Color2 = brown: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = yellowbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = tortie: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = brownbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = redtick: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = gray: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = redmerle: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = fawn: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = tricolor: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = orange: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = yellow: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = bluetiger: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = silver: Return_to_owner (1.39/0.2)
+|   |   |   |   |   |   |   Color2 = sable: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = tortiepoint: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = buff: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = gold: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = calico: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = bluetick: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = cream: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = bluemerle: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = silvertabby: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = bluetabby: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = blue: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = browntabby: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = black: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = orangetabby: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = chocolate: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = blackbrindle: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = blacksmoke: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = brownmerle: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = sealpoint: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = blacktabby: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = lynxpoint: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = torbie: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = liver: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = ruddy: Transfer (0.0)
+|   |   |   |   |   |   |   Color2 = graytabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = creamtabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blue
+|   |   |   |   |   |   |   Color2 = white
+|   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Return_to_owner (16.8/6.9)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Euthanasia (2.0)
+|   |   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   |   Weekday <= 5: Transfer (4.0)
+|   |   |   |   |   |   |   |   |   Weekday > 5: Euthanasia (6.0/3.0)
+|   |   |   |   |   |   |   Color2 = tan: Transfer (2.13/1.07)
+|   |   |   |   |   |   |   Color2 = red: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = brown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = yellowbrindle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = tortie: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = brownbrindle: Return_to_owner (1.07/0.03)
+|   |   |   |   |   |   |   Color2 = redtick: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = gray: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = redmerle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = fawn: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = tricolor: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = orange: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = yellow: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluetiger: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = silver: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = sable: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = tortiepoint: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = buff: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = gold: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = calico: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluetick: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = cream: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluemerle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = silvertabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = bluetabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blue: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = browntabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = black: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = orangetabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = chocolate: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blackbrindle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blacksmoke: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = brownmerle: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = sealpoint: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = blacktabby: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = lynxpoint: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = torbie: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = liver: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = ruddy: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Color2 = graytabby: Return_to_owner (0.0)
+|   |   |   |   |   |   Color1 = bluecream: Transfer (0.0)
+|   |   |   |   |   |   Color1 = tan
+|   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (29.0/10.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 3650: Transfer (15.0/7.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 3650
+|   |   |   |   |   |   |   |   |   |   Weekday <= 2: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 2: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   IsMixedColor = true: Return_to_owner (15.0/6.0)
+|   |   |   |   |   |   |   |   IsMixedColor = false: Transfer (6.0/1.0)
+|   |   |   |   |   |   Color1 = black: Transfer (143.0/75.0)
+|   |   |   |   |   |   Color1 = bluetabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = browntabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = red
+|   |   |   |   |   |   |   DaysUponOutcome <= 1095
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (16.0/6.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1095
+|   |   |   |   |   |   |   |   IsMixedColor = true: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 4380: Transfer (4.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 4380: Euthanasia (2.0)
+|   |   |   |   |   |   Color1 = white
+|   |   |   |   |   |   |   IsMixedColor = true: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 1460
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Return_to_owner (6.0/3.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (14.0/3.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 4745
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 4015: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 4015: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 4745: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   Color1 = silver: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   Color1 = cream
+|   |   |   |   |   |   |   IsMixedColor = true: Transfer (2.0)
+|   |   |   |   |   |   |   IsMixedColor = false: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   Color1 = orangetabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = brownbrindle
+|   |   |   |   |   |   |   DaysUponOutcome <= 330: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 330
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 1825
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Euthanasia (6.0/3.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460: Euthanasia (4.0/1.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 1825
+|   |   |   |   |   |   |   |   |   IsMixedColor = true: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false: Return_to_owner (2.0)
+|   |   |   |   |   |   Color1 = chocolate
+|   |   |   |   |   |   |   DaysUponOutcome <= 365: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 365: Return_to_owner (12.0/4.0)
+|   |   |   |   |   |   Color1 = calico: Transfer (0.0)
+|   |   |   |   |   |   Color1 = torbie: Transfer (0.0)
+|   |   |   |   |   |   Color1 = yellow
+|   |   |   |   |   |   |   DaysUponOutcome <= 1095: Transfer (4.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   Color1 = tricolor
+|   |   |   |   |   |   |   Weekday <= 2: Transfer (8.0/2.0)
+|   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   |   |   |   Weekday <= 3: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 3: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   Color1 = tortie: Transfer (0.0)
+|   |   |   |   |   |   Color1 = gray: Transfer (7.0/1.0)
+|   |   |   |   |   |   Color1 = buff
+|   |   |   |   |   |   |   Weekday <= 0: Return_to_owner (2.0)
+|   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 4015: Transfer (6.0/1.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 4015: Return_to_owner (2.0)
+|   |   |   |   |   |   Color1 = sealpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = fawn
+|   |   |   |   |   |   |   Weekday <= 2: Return_to_owner (4.0)
+|   |   |   |   |   |   |   Weekday > 2: Transfer (10.0/4.0)
+|   |   |   |   |   |   Color1 = flamepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blacktabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluemerle: Return_to_owner (4.0)
+|   |   |   |   |   |   Color1 = sable: Transfer (6.0/2.0)
+|   |   |   |   |   |   Color1 = brownmerle: Transfer (3.0)
+|   |   |   |   |   |   Color1 = browntiger: Transfer (0.0)
+|   |   |   |   |   |   Color1 = liver: Return_to_owner (1.0)
+|   |   |   |   |   |   Color1 = bluepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = apricot: Transfer (1.0)
+|   |   |   |   |   |   Color1 = lynxpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = redtick: Euthanasia (3.0/2.0)
+|   |   |   |   |   |   Color1 = lilacpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = tortiepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = graytabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluetiger: Transfer (0.0)
+|   |   |   |   |   |   Color1 = yellowbrindle: Transfer (1.0)
+|   |   |   |   |   |   Color1 = gold: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   Color1 = bluetick: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blacksmoke: Transfer (0.0)
+|   |   |   |   |   |   Color1 = redmerle: Euthanasia (1.0)
+|   |   |   |   |   |   Color1 = calicopoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blackbrindle: Return_to_owner (2.0)
+|   |   |   |   |   |   Color1 = orange: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   Color1 = chocolatepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = silvertabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = agouti: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluesmoke: Transfer (0.0)
+|   |   |   |   |   |   Color1 = livertick: Transfer (0.0)
+|   |   |   |   |   |   Color1 = pink: Died (1.0)
+|   |   |   |   |   |   Color1 = silverlynxpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blacktiger: Transfer (0.0)
+|   |   |   |   |   |   Color1 = orangetiger: Transfer (0.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (146.0/32.0)
+|   |   |   |   Breed = cairnterrier: Transfer (0.0)
+|   |   |   |   Breed = beagle: Return_to_owner (3.0)
+|   |   |   |   Breed = englishfoxhound: Transfer (0.0)
+|   |   |   |   Breed = domesticlonghair: Transfer (0.0)
+|   |   |   |   Breed = chihuahuashorthair
+|   |   |   |   |   DaysUponOutcome <= 1095: Transfer (2.0)
+|   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (4.0/2.0)
+|   |   |   |   Breed = lhasaapso: Transfer (1.0)
+|   |   |   |   Breed = pitbull: Return_to_owner (1.0)
+|   |   |   |   Breed = dachshundlonghair: Transfer (0.0)
+|   |   |   |   Breed = maltese: Transfer (0.0)
+|   |   |   |   Breed = siberianhusky: Transfer (0.0)
+|   |   |   |   Breed = greatdane: Transfer (0.0)
+|   |   |   |   Breed = chesabayretr: Transfer (0.0)
+|   |   |   |   Breed = germanshepherd: Return_to_owner (7.0/2.0)
+|   |   |   |   Breed = englishpointer: Transfer (0.0)
+|   |   |   |   Breed = cockerspaniel: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = domesticshorthair: Euthanasia (1.0)
+|   |   |   |   Breed = shihtzu: Transfer (9.0)
+|   |   |   |   Breed = dachshund: Transfer (5.06/1.06)
+|   |   |   |   Breed = anatolshepherd: Return_to_owner (1.0)
+|   |   |   |   Breed = labradorretriever: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = englishbulldog: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = bassethound: Transfer (0.0)
+|   |   |   |   Breed = boxer: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = miniaturepoodle: Transfer (0.0)
+|   |   |   |   Breed = dobermanpinsch: Transfer (0.0)
+|   |   |   |   Breed = harrier: Transfer (0.0)
+|   |   |   |   Breed = burmese: Transfer (0.0)
+|   |   |   |   Breed = domesticmediumhair: Transfer (0.0)
+|   |   |   |   Breed = bordercollie: Transfer (0.0)
+|   |   |   |   Breed = vizsla: Transfer (0.0)
+|   |   |   |   Breed = yorkshireterrier: Return_to_owner (2.0)
+|   |   |   |   Breed = bullterrier: Transfer (0.0)
+|   |   |   |   Breed = jackrussellterrier: Transfer (0.0)
+|   |   |   |   Breed = pekingese: Transfer (0.0)
+|   |   |   |   Breed = americanpitbullterrier: Transfer (0.0)
+|   |   |   |   Breed = miniatureschnauzer: Transfer (1.0)
+|   |   |   |   Breed = rottweiler
+|   |   |   |   |   Weekday <= 4: Euthanasia (2.0)
+|   |   |   |   |   Weekday > 4: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = greatpyrenees: Transfer (2.0)
+|   |   |   |   Breed = australianshepherd: Transfer (0.0)
+|   |   |   |   Breed = greyhound: Transfer (2.0)
+|   |   |   |   Breed = bernesemountaindog: Transfer (0.0)
+|   |   |   |   Breed = chihuahualonghair: Transfer (0.0)
+|   |   |   |   Breed = pembrokewelshcorgi: Transfer (0.0)
+|   |   |   |   Breed = australiancattledog: Transfer (0.0)
+|   |   |   |   Breed = shetlandsheepdog: Transfer (0.0)
+|   |   |   |   Breed = weimaraner: Transfer (0.0)
+|   |   |   |   Breed = miniaturepinscher: Transfer (0.0)
+|   |   |   |   Breed = bostonterrier: Transfer (0.0)
+|   |   |   |   Breed = siamese: Transfer (0.0)
+|   |   |   |   Breed = carolinadog: Transfer (0.0)
+|   |   |   |   Breed = goldenretriever: Transfer (0.0)
+|   |   |   |   Breed = pug: Transfer (0.0)
+|   |   |   |   Breed = dogoargentino: Transfer (0.0)
+|   |   |   |   Breed = cavalierspan: Transfer (0.0)
+|   |   |   |   Breed = staffordshire: Transfer (0.0)
+|   |   |   |   Breed = ratterrier: Transfer (0.0)
+|   |   |   |   Breed = akita: Transfer (0.0)
+|   |   |   |   Breed = chowchow: Transfer (0.0)
+|   |   |   |   Breed = americanfoxhound: Transfer (0.0)
+|   |   |   |   Breed = dachshundwirehair: Transfer (0.0)
+|   |   |   |   Breed = parsonrussellterrier: Transfer (0.0)
+|   |   |   |   Breed = bengal: Transfer (0.0)
+|   |   |   |   Breed = dalmatian: Transfer (0.0)
+|   |   |   |   Breed = oldenglishsheepdog: Transfer (0.0)
+|   |   |   |   Breed = americanbulldog: Transfer (0.0)
+|   |   |   |   Breed = catahoula: Transfer (0.0)
+|   |   |   |   Breed = chinesesharpei: Transfer (0.0)
+|   |   |   |   Breed = plotthound: Transfer (0.0)
+|   |   |   |   Breed = germanshorthairpointer: Transfer (0.0)
+|   |   |   |   Breed = rhodridgeback: Transfer (0.0)
+|   |   |   |   Breed = britishshorthair: Transfer (0.0)
+|   |   |   |   Breed = bichonfrise: Transfer (0.0)
+|   |   |   |   Breed = pomeranian: Transfer (2.0)
+|   |   |   |   Breed = westhighland: Transfer (0.0)
+|   |   |   |   Breed = treeingtennessebrindle: Transfer (0.0)
+|   |   |   |   Breed = standardpoodle: Transfer (0.0)
+|   |   |   |   Breed = italiangreyhound: Transfer (0.0)
+|   |   |   |   Breed = englishspringerspaniel: Transfer (0.0)
+|   |   |   |   Breed = pointer: Transfer (1.0)
+|   |   |   |   Breed = havanese: Transfer (0.0)
+|   |   |   |   Breed = australiankelpie: Transfer (0.0)
+|   |   |   |   Breed = americanstaffordshireterrier: Euthanasia (1.0)
+|   |   |   |   Breed = softcoatedwheatenterrier: Transfer (0.0)
+|   |   |   |   Breed = canecorso: Transfer (0.0)
+|   |   |   |   Breed = standardschnauzer: Transfer (0.0)
+|   |   |   |   Breed = bloodhound: Transfer (0.0)
+|   |   |   |   Breed = belgiansheepdog: Transfer (0.0)
+|   |   |   |   Breed = pbgv: Transfer (0.0)
+|   |   |   |   Breed = leonberger: Transfer (0.0)
+|   |   |   |   Breed = welshspringerspaniel: Transfer (0.0)
+|   |   |   |   Breed = brussgriffon: Transfer (0.0)
+|   |   |   |   Breed = bullterrierminiature: Transfer (0.0)
+|   |   |   |   Breed = wirehairfoxterrier: Transfer (0.0)
+|   |   |   |   Breed = shibainu: Transfer (0.0)
+|   |   |   |   Breed = stbernardsmoothcoat: Transfer (0.0)
+|   |   |   |   Breed = toypoodle: Transfer (0.0)
+|   |   |   |   Breed = sphynx: Transfer (0.0)
+|   |   |   |   Breed = borderterrier: Transfer (0.0)
+|   |   |   |   Breed = blackmouthcur: Transfer (0.0)
+|   |   |   |   Breed = americaneskimo: Transfer (0.0)
+|   |   |   |   Breed = airedaleterrier: Transfer (0.0)
+|   |   |   |   Breed = collierough: Transfer (0.0)
+|   |   |   |   Breed = colliesmooth: Transfer (0.0)
+|   |   |   |   Breed = mainecoon: Transfer (0.0)
+|   |   |   |   Breed = tibetanspaniel: Transfer (0.0)
+|   |   |   |   Breed = himalayan: Transfer (0.0)
+|   |   |   |   Breed = novascotiaducktollingretriever: Transfer (0.0)
+|   |   |   |   Breed = norfolkterrier: Transfer (0.0)
+|   |   |   |   Breed = papillon: Transfer (0.0)
+|   |   |   |   Breed = queenslandheeler: Transfer (0.0)
+|   |   |   |   Breed = saluki: Transfer (0.0)
+|   |   |   |   Breed = bullmastiff: Transfer (0.0)
+|   |   |   |   Breed = devonrex: Transfer (1.0)
+|   |   |   |   Breed = bluelacy: Transfer (0.0)
+|   |   |   |   Breed = manx: Transfer (0.0)
+|   |   |   |   Breed = presacanario: Transfer (0.0)
+|   |   |   |   Breed = bulldog: Transfer (0.0)
+|   |   |   |   Breed = brittany: Transfer (0.0)
+|   |   |   |   Breed = snowshoe: Transfer (0.0)
+|   |   |   |   Breed = germanwirehairedpointer: Transfer (0.0)
+|   |   |   |   Breed = persian: Transfer (0.0)
+|   |   |   |   Breed = boerboel: Transfer (0.0)
+|   |   |   |   Breed = pharaohhound: Transfer (0.0)
+|   |   |   |   Breed = englishshepherd: Transfer (0.0)
+|   |   |   |   Breed = dutchshepherd: Transfer (0.0)
+|   |   |   |   Breed = japanesechin: Transfer (1.0)
+|   |   |   |   Breed = russianblue: Transfer (0.0)
+|   |   |   |   Breed = cardiganwelshcorgi: Transfer (0.0)
+|   |   |   |   Breed = finnishspitz: Return_to_owner (1.0)
+|   |   |   |   Breed = bluetickhound: Transfer (0.0)
+|   |   |   |   Breed = frenchbulldog: Transfer (0.0)
+|   |   |   |   Breed = belgianmalinois: Transfer (0.0)
+|   |   |   |   Breed = alaskanhusky: Return_to_owner (1.0)
+|   |   |   |   Breed = keeshond: Transfer (0.0)
+|   |   |   |   Breed = stbernardroughcoat: Transfer (0.0)
+|   |   |   |   Breed = ragdoll: Transfer (0.0)
+|   |   |   |   Breed = redbonehound: Transfer (0.0)
+|   |   |   |   Breed = alaskanmalamute: Transfer (0.0)
+|   |   |   |   Breed = beauceron: Transfer (0.0)
+|   |   |   SexUponOutcome = unknown
+|   |   |   |   DaysUponOutcome <= 730
+|   |   |   |   |   AnimalType = Dog: Return_to_owner (3.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (5.0)
+|   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   Weekday <= 2: Return_to_owner (2.0)
+|   |   |   |   |   Weekday > 2: Euthanasia (6.0/1.0)
+|   HasName = false
+|   |   SexUponOutcome = neuteredmale
+|   |   |   DaysUponOutcome <= 300: Adoption (740.0/134.0)
+|   |   |   DaysUponOutcome > 300
+|   |   |   |   DaysUponOutcome <= 2555
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   DaysUponOutcome <= 1460: Adoption (310.0/128.0)
+|   |   |   |   |   |   DaysUponOutcome > 1460: Transfer (42.0/20.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (174.0/62.0)
+|   |   |   |   DaysUponOutcome > 2555
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   Color1 = brown: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   Color1 = creamtabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blue: Adoption (1.0)
+|   |   |   |   |   |   Color1 = bluecream: Transfer (0.0)
+|   |   |   |   |   |   Color1 = tan: Transfer (5.0/1.0)
+|   |   |   |   |   |   Color1 = black
+|   |   |   |   |   |   |   DaysUponOutcome <= 2920: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 2920: Euthanasia (16.0/8.0)
+|   |   |   |   |   |   Color1 = bluetabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = browntabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = red: Transfer (1.0)
+|   |   |   |   |   |   Color1 = white: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   Color1 = silver: Transfer (0.0)
+|   |   |   |   |   |   Color1 = cream: Transfer (0.0)
+|   |   |   |   |   |   Color1 = orangetabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = brownbrindle: Transfer (0.0)
+|   |   |   |   |   |   Color1 = chocolate: Transfer (0.0)
+|   |   |   |   |   |   Color1 = calico: Transfer (0.0)
+|   |   |   |   |   |   Color1 = torbie: Transfer (0.0)
+|   |   |   |   |   |   Color1 = yellow: Transfer (1.0)
+|   |   |   |   |   |   Color1 = tricolor: Euthanasia (2.0)
+|   |   |   |   |   |   Color1 = tortie: Transfer (0.0)
+|   |   |   |   |   |   Color1 = gray: Transfer (0.0)
+|   |   |   |   |   |   Color1 = buff: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   Color1 = sealpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = fawn: Transfer (0.0)
+|   |   |   |   |   |   Color1 = flamepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blacktabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluemerle: Transfer (0.0)
+|   |   |   |   |   |   Color1 = sable: Transfer (0.0)
+|   |   |   |   |   |   Color1 = brownmerle: Transfer (0.0)
+|   |   |   |   |   |   Color1 = browntiger: Transfer (0.0)
+|   |   |   |   |   |   Color1 = liver: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = apricot: Transfer (0.0)
+|   |   |   |   |   |   Color1 = lynxpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = redtick: Transfer (0.0)
+|   |   |   |   |   |   Color1 = lilacpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = tortiepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = graytabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluetiger: Transfer (0.0)
+|   |   |   |   |   |   Color1 = yellowbrindle: Transfer (0.0)
+|   |   |   |   |   |   Color1 = gold: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluetick: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blacksmoke: Transfer (0.0)
+|   |   |   |   |   |   Color1 = redmerle: Transfer (0.0)
+|   |   |   |   |   |   Color1 = calicopoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blackbrindle: Transfer (0.0)
+|   |   |   |   |   |   Color1 = orange: Transfer (0.0)
+|   |   |   |   |   |   Color1 = chocolatepoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = silvertabby: Transfer (0.0)
+|   |   |   |   |   |   Color1 = agouti: Transfer (0.0)
+|   |   |   |   |   |   Color1 = bluesmoke: Transfer (0.0)
+|   |   |   |   |   |   Color1 = livertick: Transfer (0.0)
+|   |   |   |   |   |   Color1 = pink: Transfer (0.0)
+|   |   |   |   |   |   Color1 = silverlynxpoint: Transfer (0.0)
+|   |   |   |   |   |   Color1 = blacktiger: Transfer (0.0)
+|   |   |   |   |   |   Color1 = orangetiger: Transfer (0.0)
+|   |   |   |   |   AnimalType = Cat: Euthanasia (43.0/11.0)
+|   |   SexUponOutcome = spayedfemale
+|   |   |   DaysUponOutcome <= 330: Adoption (748.0/119.0)
+|   |   |   DaysUponOutcome > 330
+|   |   |   |   AnimalType = Dog
+|   |   |   |   |   DaysUponOutcome <= 2190: Adoption (296.0/118.0)
+|   |   |   |   |   DaysUponOutcome > 2190: Transfer (32.0/15.0)
+|   |   |   |   AnimalType = Cat: Transfer (165.0/71.0)
+|   |   SexUponOutcome = intactmale
+|   |   |   DaysUponOutcome <= 365: Transfer (885.0/188.0)
+|   |   |   DaysUponOutcome > 365
+|   |   |   |   AnimalType = Dog: Euthanasia (134.0/59.0)
+|   |   |   |   AnimalType = Cat
+|   |   |   |   |   DaysUponOutcome <= 2190: Transfer (186.0/60.0)
+|   |   |   |   |   DaysUponOutcome > 2190: Euthanasia (14.0/2.0)
+|   |   SexUponOutcome = intactfemale
+|   |   |   DaysUponOutcome <= 1460: Transfer (1250.0/238.0)
+|   |   |   DaysUponOutcome > 1460: Euthanasia (121.0/45.0)
+|   |   SexUponOutcome = unknown
+|   |   |   DaysUponOutcome <= 1460
+|   |   |   |   DaysUponOutcome <= 60
+|   |   |   |   |   Color1 = brown: Transfer (0.0)
+|   |   |   |   |   Color1 = creamtabby: Transfer (0.0)
+|   |   |   |   |   Color1 = blue: Transfer (0.0)
+|   |   |   |   |   Color1 = bluecream: Transfer (0.0)
+|   |   |   |   |   Color1 = tan: Transfer (0.0)
+|   |   |   |   |   Color1 = black
+|   |   |   |   |   |   Weekday <= 3: Euthanasia (7.0)
+|   |   |   |   |   |   Weekday > 3: Transfer (12.0/2.0)
+|   |   |   |   |   Color1 = bluetabby: Euthanasia (2.0/1.0)
+|   |   |   |   |   Color1 = browntabby
+|   |   |   |   |   |   DaysUponOutcome <= 35: Euthanasia (5.0/1.0)
+|   |   |   |   |   |   DaysUponOutcome > 35: Transfer (6.0/1.0)
+|   |   |   |   |   Color1 = red: Transfer (0.0)
+|   |   |   |   |   Color1 = white: Transfer (0.0)
+|   |   |   |   |   Color1 = silver: Transfer (0.0)
+|   |   |   |   |   Color1 = cream: Transfer (0.0)
+|   |   |   |   |   Color1 = orangetabby: Died (1.0)
+|   |   |   |   |   Color1 = brownbrindle: Transfer (0.0)
+|   |   |   |   |   Color1 = chocolate: Transfer (0.0)
+|   |   |   |   |   Color1 = calico: Transfer (1.0)
+|   |   |   |   |   Color1 = torbie: Transfer (0.0)
+|   |   |   |   |   Color1 = yellow: Transfer (0.0)
+|   |   |   |   |   Color1 = tricolor: Transfer (1.0)
+|   |   |   |   |   Color1 = tortie: Transfer (0.0)
+|   |   |   |   |   Color1 = gray: Transfer (0.0)
+|   |   |   |   |   Color1 = buff: Transfer (0.0)
+|   |   |   |   |   Color1 = sealpoint: Transfer (1.0)
+|   |   |   |   |   Color1 = fawn: Transfer (0.0)
+|   |   |   |   |   Color1 = flamepoint: Transfer (0.0)
+|   |   |   |   |   Color1 = blacktabby: Transfer (0.0)
+|   |   |   |   |   Color1 = bluemerle: Transfer (0.0)
+|   |   |   |   |   Color1 = sable: Transfer (0.0)
+|   |   |   |   |   Color1 = brownmerle: Transfer (0.0)
+|   |   |   |   |   Color1 = browntiger: Transfer (0.0)
+|   |   |   |   |   Color1 = liver: Transfer (0.0)
+|   |   |   |   |   Color1 = bluepoint: Transfer (0.0)
+|   |   |   |   |   Color1 = apricot: Euthanasia (1.0)
+|   |   |   |   |   Color1 = lynxpoint: Euthanasia (1.0)
+|   |   |   |   |   Color1 = redtick: Transfer (0.0)
+|   |   |   |   |   Color1 = lilacpoint: Transfer (0.0)
+|   |   |   |   |   Color1 = tortiepoint: Transfer (0.0)
+|   |   |   |   |   Color1 = graytabby: Died (1.0)
+|   |   |   |   |   Color1 = bluetiger: Transfer (0.0)
+|   |   |   |   |   Color1 = yellowbrindle: Transfer (0.0)
+|   |   |   |   |   Color1 = gold: Transfer (0.0)
+|   |   |   |   |   Color1 = bluetick: Transfer (0.0)
+|   |   |   |   |   Color1 = blacksmoke: Transfer (0.0)
+|   |   |   |   |   Color1 = redmerle: Transfer (0.0)
+|   |   |   |   |   Color1 = calicopoint: Transfer (0.0)
+|   |   |   |   |   Color1 = blackbrindle: Transfer (0.0)
+|   |   |   |   |   Color1 = orange: Transfer (0.0)
+|   |   |   |   |   Color1 = chocolatepoint: Transfer (0.0)
+|   |   |   |   |   Color1 = silvertabby: Transfer (0.0)
+|   |   |   |   |   Color1 = agouti: Transfer (0.0)
+|   |   |   |   |   Color1 = bluesmoke: Transfer (0.0)
+|   |   |   |   |   Color1 = livertick: Transfer (0.0)
+|   |   |   |   |   Color1 = pink: Transfer (0.0)
+|   |   |   |   |   Color1 = silverlynxpoint: Transfer (0.0)
+|   |   |   |   |   Color1 = blacktiger: Transfer (0.0)
+|   |   |   |   |   Color1 = orangetiger: Transfer (0.0)
+|   |   |   |   DaysUponOutcome > 60: Transfer (339.0/43.0)
+|   |   |   DaysUponOutcome > 1460: Euthanasia (19.0/6.0)
+
+Number of Leaves  :   1094
+
+Size of the tree :  1353
+
+
+Time taken to build model: 1.7 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       17197               64.3384 %
+Incorrectly Classified Instances      9532               35.6616 %
+Kappa statistic                          0.4589
+Mean absolute error                      0.1875
+Root mean squared error                  0.3133
+Relative absolute error                 69.147  %
+Root relative squared error             85.0766 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.449    0.122    0.446      0.449    0.448      0.327    0.796     0.409     Return_to_owner
+                 0.142    0.010    0.473      0.142    0.219      0.236    0.774     0.228     Euthanasia
+                 0.812    0.277    0.665      0.812    0.731      0.525    0.846     0.738     Adoption
+                 0.645    0.127    0.734      0.645    0.687      0.535    0.800     0.725     Transfer
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.776     0.029     Died
+Weighted Avg.    0.643    0.179    0.634      0.643    0.629      0.473    0.816     0.639     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 2150   64 1992  580    0 |    a = Return_to_owner
+  384  221  202  748    0 |    b = Euthanasia
+ 1290   18 8746  715    0 |    c = Adoption
+  984  156 2202 6080    0 |    d = Transfer
+    9    8   19  161    0 |    e = Died
+
+
+
+
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.Bagging -P 100 -S 1 -num-slots 1 -I 10 -W weka.classifiers.trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+Relation:     refined_train-weka.filters.unsupervised.attribute.Remove-R4
+Instances:    26729
+Attributes:   10
+              HasName
+              Weekday
+              OutcomeType
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bagging with 10 iterations and base learner
+
+weka.classifiers.trees.REPTree -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+
+Time taken to build model: 4.86 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16843               63.014  %
+Incorrectly Classified Instances      9886               36.986  %
+Kappa statistic                          0.4344
+Mean absolute error                      0.1872
+Root mean squared error                  0.3136
+Relative absolute error                 69.0301 %
+Root relative squared error             85.1796 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.391    0.112    0.433      0.391    0.411      0.291    0.802     0.405     Return_to_owner
+                 0.084    0.008    0.392      0.084    0.139      0.161    0.777     0.218     Euthanasia
+                 0.809    0.292    0.651      0.809    0.721      0.507    0.853     0.779     Adoption
+                 0.651    0.148    0.705      0.651    0.677      0.512    0.809     0.745     Transfer
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.733     0.030     Died
+Weighted Avg.    0.630    0.191    0.611      0.630    0.611      0.446    0.823     0.662     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1870   44 2140  732    0 |    a = Return_to_owner
+  331  131  236  857    0 |    b = Euthanasia
+ 1213   19 8710  827    0 |    c = Adoption
+  897  132 2261 6132    0 |    d = Transfer
+    8    8   30  151    0 |    e = Died
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J48 sem color
+
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     refined_train-weka.filters.unsupervised.attribute.Remove-R4-weka.filters.unsupervised.attribute.Remove-R8-9
+Instances:    26729
+Attributes:   8
+              HasName
+              Weekday
+              OutcomeType
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+DaysUponOutcome <= 28
+|   AnimalType = Dog
+|   |   IsMixedColor = true
+|   |   |   DaysUponOutcome <= 1
+|   |   |   |   SexUponOutcome = neuteredmale: Return_to_owner (0.0)
+|   |   |   |   SexUponOutcome = spayedfemale: Return_to_owner (0.0)
+|   |   |   |   SexUponOutcome = intactmale: Return_to_owner (4.0)
+|   |   |   |   SexUponOutcome = intactfemale: Return_to_owner (2.0)
+|   |   |   |   SexUponOutcome = unknown: Transfer (3.0/1.0)
+|   |   |   DaysUponOutcome > 1
+|   |   |   |   DaysUponOutcome <= 7: Transfer (73.0/7.0)
+|   |   |   |   DaysUponOutcome > 7
+|   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   DaysUponOutcome <= 21: Return_to_owner (2.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 21: Transfer (2.0)
+|   |   |   |   |   |   Weekday > 0: Transfer (34.0/2.0)
+|   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   DaysUponOutcome <= 14: Return_to_owner (16.0/3.0)
+|   |   |   |   |   |   DaysUponOutcome > 14: Transfer (10.0/1.0)
+|   |   IsMixedColor = false: Transfer (112.0/11.0)
+|   AnimalType = Cat: Transfer (2019.0/118.0)
+DaysUponOutcome > 28
+|   HasName = true
+|   |   DaysUponOutcome <= 240
+|   |   |   SexUponOutcome = neuteredmale: Adoption (2424.0/485.0)
+|   |   |   SexUponOutcome = spayedfemale: Adoption (2291.0/367.0)
+|   |   |   SexUponOutcome = intactmale
+|   |   |   |   AnimalType = Dog: Transfer (241.0/87.0)
+|   |   |   |   AnimalType = Cat
+|   |   |   |   |   DaysUponOutcome <= 35: Transfer (183.0/62.0)
+|   |   |   |   |   DaysUponOutcome > 35
+|   |   |   |   |   |   Weekday <= 0: Adoption (24.0/6.0)
+|   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   Weekday <= 5: Transfer (120.0/37.0)
+|   |   |   |   |   |   |   Weekday > 5: Adoption (21.0/6.0)
+|   |   |   SexUponOutcome = intactfemale: Transfer (636.0/239.0)
+|   |   |   SexUponOutcome = unknown: Transfer (13.0/2.0)
+|   |   DaysUponOutcome > 240
+|   |   |   SexUponOutcome = neuteredmale
+|   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   AnimalType = Dog: Adoption (1461.0/641.0)
+|   |   |   |   |   AnimalType = Cat
+|   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   Weekday <= 0: Adoption (40.0/11.0)
+|   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   IsMixedColor = true: Transfer (69.0/22.0)
+|   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 300
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 270
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (5.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 270
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 4: Adoption (5.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 4: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 300
+|   |   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (19.0/9.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (65.0/31.0)
+|   |   |   |   |   |   Weekday > 5: Adoption (33.0/11.0)
+|   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   DaysUponOutcome <= 730
+|   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   Weekday <= 2: Adoption (368.0/210.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   Weekday <= 4: Return_to_owner (210.0/130.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 4: Transfer (104.0/69.0)
+|   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Adoption (132.0/58.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1: Return_to_owner (192.0/101.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (2009.46/1036.0)
+|   |   |   |   |   |   Weekday > 5
+|   |   |   |   |   |   |   DaysUponOutcome <= 1825: Adoption (405.0/187.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1825: Return_to_owner (123.0/62.0)
+|   |   |   |   |   AnimalType = Cat
+|   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (24.0/14.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 730: Adoption (94.0/38.0)
+|   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   Weekday <= 2
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (23.0/11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (25.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2190: Transfer (12.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2190: Adoption (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Weekday > 1: Transfer (16.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Adoption (20.0/13.0)
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = false: Transfer (123.0/81.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (59.0/27.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Return_to_owner (34.0/21.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Return_to_owner (10.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Adoption (19.0/10.0)
+|   |   |   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Adoption (49.0/27.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2555
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2190: Transfer (27.0/15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2190: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2555: Transfer (12.0/7.0)
+|   |   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Transfer (43.0/26.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460: Adoption (54.0/29.0)
+|   |   |   |   |   |   Weekday > 5: Adoption (114.0/41.0)
+|   |   |   SexUponOutcome = spayedfemale
+|   |   |   |   AnimalType = Dog
+|   |   |   |   |   DaysUponOutcome <= 730: Adoption (2090.0/920.0)
+|   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   DaysUponOutcome <= 4380
+|   |   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Adoption (176.0/83.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Return_to_owner (154.0/77.0)
+|   |   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095: Adoption (239.0/145.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (562.0/294.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false: Return_to_owner (480.41/254.0)
+|   |   |   |   |   |   |   Weekday > 5: Adoption (321.0/160.0)
+|   |   |   |   |   |   DaysUponOutcome > 4380: Return_to_owner (93.0/25.0)
+|   |   |   |   AnimalType = Cat
+|   |   |   |   |   Weekday <= 0: Adoption (204.0/59.0)
+|   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   Weekday <= 5
+|   |   |   |   |   |   |   DaysUponOutcome <= 2190
+|   |   |   |   |   |   |   |   Weekday <= 4: Transfer (496.0/243.0)
+|   |   |   |   |   |   |   |   Weekday > 4
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1095: Transfer (25.0/12.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1095: Adoption (11.0/5.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Adoption (59.0/30.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1825: Return_to_owner (8.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1825: Euthanasia (3.0/2.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 2190
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 3285
+|   |   |   |   |   |   |   |   |   Weekday <= 4
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (13.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 2
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday <= 3: Adoption (6.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Weekday > 3: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920: Adoption (31.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Transfer (6.0/3.0)
+|   |   |   |   |   |   |   |   |   Weekday > 4: Adoption (20.0/7.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 3285
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   Weekday <= 1
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 4745: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 4745: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 1: Return_to_owner (25.0/14.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 5110: Adoption (57.0/30.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 5110: Return_to_owner (9.0/4.0)
+|   |   |   |   |   |   Weekday > 5: Adoption (188.0/64.0)
+|   |   |   SexUponOutcome = intactmale
+|   |   |   |   Breed = mixed
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   DaysUponOutcome <= 330
+|   |   |   |   |   |   |   DaysUponOutcome <= 270
+|   |   |   |   |   |   |   |   Weekday <= 4: Return_to_owner (8.0)
+|   |   |   |   |   |   |   |   Weekday > 4: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 270: Transfer (33.0/10.0)
+|   |   |   |   |   |   DaysUponOutcome > 330
+|   |   |   |   |   |   |   DaysUponOutcome <= 1095
+|   |   |   |   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   Weekday <= 0: Transfer (38.0/19.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 0: Return_to_owner (124.0/62.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 365
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Transfer (24.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Return_to_owner (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   |   |   |   |   Weekday <= 2: Return_to_owner (30.0/17.0)
+|   |   |   |   |   |   |   |   |   |   |   Weekday > 2: Transfer (17.0/5.0)
+|   |   |   |   |   |   |   |   Weekday > 3: Return_to_owner (175.0/91.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (237.0/99.0)
+|   |   |   |   |   AnimalType = Cat
+|   |   |   |   |   |   DaysUponOutcome <= 4015
+|   |   |   |   |   |   |   DaysUponOutcome <= 270: Euthanasia (2.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 270: Transfer (52.0/12.0)
+|   |   |   |   |   |   DaysUponOutcome > 4015: Euthanasia (3.0)
+|   |   |   |   Breed = cairnterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = beagle: Return_to_owner (0.0)
+|   |   |   |   Breed = englishfoxhound: Return_to_owner (0.0)
+|   |   |   |   Breed = domesticlonghair: Transfer (1.0)
+|   |   |   |   Breed = chihuahuashorthair: Euthanasia (2.0/1.0)
+|   |   |   |   Breed = lhasaapso: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = pitbull
+|   |   |   |   |   DaysUponOutcome <= 1095: Return_to_owner (4.0/1.0)
+|   |   |   |   |   DaysUponOutcome > 1095: Euthanasia (4.0/2.0)
+|   |   |   |   Breed = dachshundlonghair: Transfer (1.0)
+|   |   |   |   Breed = maltese: Return_to_owner (1.0)
+|   |   |   |   Breed = siberianhusky: Return_to_owner (4.0/1.0)
+|   |   |   |   Breed = greatdane: Return_to_owner (0.0)
+|   |   |   |   Breed = chesabayretr: Return_to_owner (0.0)
+|   |   |   |   Breed = germanshepherd: Return_to_owner (8.0/4.0)
+|   |   |   |   Breed = englishpointer: Return_to_owner (0.0)
+|   |   |   |   Breed = cockerspaniel: Euthanasia (1.0)
+|   |   |   |   Breed = domesticshorthair: Return_to_owner (0.0)
+|   |   |   |   Breed = shihtzu: Transfer (10.0)
+|   |   |   |   Breed = dachshund
+|   |   |   |   |   IsMixedColor = true: Adoption (2.0/1.0)
+|   |   |   |   |   IsMixedColor = false: Return_to_owner (3.07/1.0)
+|   |   |   |   Breed = anatolshepherd: Return_to_owner (0.0)
+|   |   |   |   Breed = labradorretriever
+|   |   |   |   |   Weekday <= 3: Return_to_owner (4.0)
+|   |   |   |   |   Weekday > 3: Transfer (3.0/1.0)
+|   |   |   |   Breed = englishbulldog
+|   |   |   |   |   DaysUponOutcome <= 1460: Return_to_owner (3.0)
+|   |   |   |   |   DaysUponOutcome > 1460: Transfer (2.0)
+|   |   |   |   Breed = bassethound: Return_to_owner (2.0)
+|   |   |   |   Breed = boxer: Return_to_owner (4.0/1.0)
+|   |   |   |   Breed = miniaturepoodle: Return_to_owner (1.0)
+|   |   |   |   Breed = dobermanpinsch: Transfer (1.0)
+|   |   |   |   Breed = harrier: Return_to_owner (0.0)
+|   |   |   |   Breed = burmese: Return_to_owner (0.0)
+|   |   |   |   Breed = domesticmediumhair: Return_to_owner (0.0)
+|   |   |   |   Breed = bordercollie: Return_to_owner (0.0)
+|   |   |   |   Breed = vizsla: Return_to_owner (0.0)
+|   |   |   |   Breed = yorkshireterrier: Return_to_owner (1.0)
+|   |   |   |   Breed = bullterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = jackrussellterrier: Return_to_owner (1.0)
+|   |   |   |   Breed = pekingese: Transfer (2.0)
+|   |   |   |   Breed = americanpitbullterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = miniatureschnauzer: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = rottweiler: Return_to_owner (7.0/2.0)
+|   |   |   |   Breed = greatpyrenees: Return_to_owner (0.0)
+|   |   |   |   Breed = australianshepherd: Return_to_owner (1.0)
+|   |   |   |   Breed = greyhound: Transfer (3.0)
+|   |   |   |   Breed = bernesemountaindog: Return_to_owner (0.0)
+|   |   |   |   Breed = chihuahualonghair: Return_to_owner (0.0)
+|   |   |   |   Breed = pembrokewelshcorgi: Return_to_owner (1.0)
+|   |   |   |   Breed = australiancattledog: Return_to_owner (0.0)
+|   |   |   |   Breed = shetlandsheepdog: Transfer (2.0)
+|   |   |   |   Breed = weimaraner: Transfer (2.0)
+|   |   |   |   Breed = miniaturepinscher: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = bostonterrier
+|   |   |   |   |   Weekday <= 2: Euthanasia (2.0/1.0)
+|   |   |   |   |   Weekday > 2: Return_to_owner (3.0/1.0)
+|   |   |   |   Breed = siamese: Return_to_owner (0.0)
+|   |   |   |   Breed = carolinadog: Return_to_owner (0.0)
+|   |   |   |   Breed = goldenretriever: Transfer (6.0/1.0)
+|   |   |   |   Breed = pug: Transfer (4.0)
+|   |   |   |   Breed = dogoargentino: Return_to_owner (0.0)
+|   |   |   |   Breed = cavalierspan: Return_to_owner (1.0)
+|   |   |   |   Breed = staffordshire: Return_to_owner (0.0)
+|   |   |   |   Breed = ratterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = akita: Euthanasia (1.0)
+|   |   |   |   Breed = chowchow: Return_to_owner (0.0)
+|   |   |   |   Breed = americanfoxhound: Return_to_owner (0.0)
+|   |   |   |   Breed = dachshundwirehair: Return_to_owner (0.0)
+|   |   |   |   Breed = parsonrussellterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = bengal: Return_to_owner (0.0)
+|   |   |   |   Breed = dalmatian: Return_to_owner (0.0)
+|   |   |   |   Breed = oldenglishsheepdog: Return_to_owner (0.0)
+|   |   |   |   Breed = americanbulldog: Return_to_owner (0.0)
+|   |   |   |   Breed = catahoula: Return_to_owner (0.0)
+|   |   |   |   Breed = chinesesharpei: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = plotthound: Return_to_owner (0.0)
+|   |   |   |   Breed = germanshorthairpointer: Return_to_owner (0.0)
+|   |   |   |   Breed = rhodridgeback: Euthanasia (1.0)
+|   |   |   |   Breed = britishshorthair: Return_to_owner (0.0)
+|   |   |   |   Breed = bichonfrise: Return_to_owner (0.0)
+|   |   |   |   Breed = pomeranian: Return_to_owner (0.0)
+|   |   |   |   Breed = westhighland: Return_to_owner (0.0)
+|   |   |   |   Breed = treeingtennessebrindle: Return_to_owner (0.0)
+|   |   |   |   Breed = standardpoodle: Adoption (1.0)
+|   |   |   |   Breed = italiangreyhound: Return_to_owner (0.0)
+|   |   |   |   Breed = englishspringerspaniel: Return_to_owner (0.0)
+|   |   |   |   Breed = pointer: Return_to_owner (0.0)
+|   |   |   |   Breed = havanese: Return_to_owner (0.0)
+|   |   |   |   Breed = australiankelpie: Return_to_owner (0.0)
+|   |   |   |   Breed = americanstaffordshireterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = softcoatedwheatenterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = canecorso: Return_to_owner (0.0)
+|   |   |   |   Breed = standardschnauzer: Return_to_owner (0.0)
+|   |   |   |   Breed = bloodhound: Return_to_owner (0.0)
+|   |   |   |   Breed = belgiansheepdog: Return_to_owner (0.0)
+|   |   |   |   Breed = pbgv: Return_to_owner (0.0)
+|   |   |   |   Breed = leonberger: Return_to_owner (0.0)
+|   |   |   |   Breed = welshspringerspaniel: Return_to_owner (0.0)
+|   |   |   |   Breed = brussgriffon: Return_to_owner (0.0)
+|   |   |   |   Breed = bullterrierminiature: Return_to_owner (0.0)
+|   |   |   |   Breed = wirehairfoxterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = shibainu: Return_to_owner (0.0)
+|   |   |   |   Breed = stbernardsmoothcoat: Return_to_owner (0.0)
+|   |   |   |   Breed = toypoodle: Return_to_owner (0.0)
+|   |   |   |   Breed = sphynx: Return_to_owner (1.0)
+|   |   |   |   Breed = borderterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = blackmouthcur: Return_to_owner (0.0)
+|   |   |   |   Breed = americaneskimo: Return_to_owner (0.0)
+|   |   |   |   Breed = airedaleterrier: Transfer (1.0)
+|   |   |   |   Breed = collierough: Return_to_owner (1.0)
+|   |   |   |   Breed = colliesmooth: Return_to_owner (0.0)
+|   |   |   |   Breed = mainecoon: Return_to_owner (0.0)
+|   |   |   |   Breed = tibetanspaniel: Return_to_owner (0.0)
+|   |   |   |   Breed = himalayan: Return_to_owner (0.0)
+|   |   |   |   Breed = novascotiaducktollingretriever: Return_to_owner (0.0)
+|   |   |   |   Breed = norfolkterrier: Return_to_owner (0.0)
+|   |   |   |   Breed = papillon: Return_to_owner (0.0)
+|   |   |   |   Breed = queenslandheeler: Return_to_owner (0.0)
+|   |   |   |   Breed = saluki: Return_to_owner (0.0)
+|   |   |   |   Breed = bullmastiff: Return_to_owner (0.0)
+|   |   |   |   Breed = devonrex: Return_to_owner (0.0)
+|   |   |   |   Breed = bluelacy: Return_to_owner (0.0)
+|   |   |   |   Breed = manx: Return_to_owner (0.0)
+|   |   |   |   Breed = presacanario: Return_to_owner (1.0)
+|   |   |   |   Breed = bulldog: Return_to_owner (1.0)
+|   |   |   |   Breed = brittany: Return_to_owner (1.0)
+|   |   |   |   Breed = snowshoe: Return_to_owner (0.0)
+|   |   |   |   Breed = germanwirehairedpointer: Return_to_owner (0.0)
+|   |   |   |   Breed = persian: Return_to_owner (0.0)
+|   |   |   |   Breed = boerboel: Return_to_owner (0.0)
+|   |   |   |   Breed = pharaohhound: Return_to_owner (0.0)
+|   |   |   |   Breed = englishshepherd: Return_to_owner (0.0)
+|   |   |   |   Breed = dutchshepherd: Return_to_owner (0.0)
+|   |   |   |   Breed = japanesechin: Return_to_owner (0.0)
+|   |   |   |   Breed = russianblue: Return_to_owner (0.0)
+|   |   |   |   Breed = cardiganwelshcorgi: Return_to_owner (0.0)
+|   |   |   |   Breed = finnishspitz: Return_to_owner (0.0)
+|   |   |   |   Breed = bluetickhound: Return_to_owner (0.0)
+|   |   |   |   Breed = frenchbulldog: Return_to_owner (0.0)
+|   |   |   |   Breed = belgianmalinois: Return_to_owner (0.0)
+|   |   |   |   Breed = alaskanhusky: Return_to_owner (0.0)
+|   |   |   |   Breed = keeshond: Return_to_owner (0.0)
+|   |   |   |   Breed = stbernardroughcoat: Return_to_owner (0.0)
+|   |   |   |   Breed = ragdoll: Return_to_owner (0.0)
+|   |   |   |   Breed = redbonehound: Return_to_owner (0.0)
+|   |   |   |   Breed = alaskanmalamute: Return_to_owner (1.0)
+|   |   |   |   Breed = beauceron: Return_to_owner (0.0)
+|   |   |   SexUponOutcome = intactfemale
+|   |   |   |   Breed = mixed
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   DaysUponOutcome <= 4380
+|   |   |   |   |   |   |   Weekday <= 0
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 3285
+|   |   |   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (29.0/12.0)
+|   |   |   |   |   |   |   |   |   DaysUponOutcome > 730: Return_to_owner (13.0/5.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 3285: Transfer (7.0/3.0)
+|   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 4015
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 1460: Transfer (235.0/118.0)
+|   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2555: Return_to_owner (31.0/12.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2555
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome <= 2920: Transfer (12.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DaysUponOutcome > 2920: Return_to_owner (15.0/6.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false: Transfer (161.0/74.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 4015
+|   |   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   |   Weekday <= 3: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 3: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   |   |   IsMixedColor = false: Return_to_owner (6.0/3.0)
+|   |   |   |   |   |   DaysUponOutcome > 4380
+|   |   |   |   |   |   |   Weekday <= 1: Return_to_owner (7.0/1.0)
+|   |   |   |   |   |   |   Weekday > 1: Euthanasia (17.0/8.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (146.0/32.0)
+|   |   |   |   Breed = cairnterrier: Transfer (0.0)
+|   |   |   |   Breed = beagle: Return_to_owner (3.0)
+|   |   |   |   Breed = englishfoxhound: Transfer (0.0)
+|   |   |   |   Breed = domesticlonghair: Transfer (0.0)
+|   |   |   |   Breed = chihuahuashorthair
+|   |   |   |   |   DaysUponOutcome <= 1095: Transfer (2.0)
+|   |   |   |   |   DaysUponOutcome > 1095: Return_to_owner (4.0/2.0)
+|   |   |   |   Breed = lhasaapso: Transfer (1.0)
+|   |   |   |   Breed = pitbull: Return_to_owner (1.0)
+|   |   |   |   Breed = dachshundlonghair: Transfer (0.0)
+|   |   |   |   Breed = maltese: Transfer (0.0)
+|   |   |   |   Breed = siberianhusky: Transfer (0.0)
+|   |   |   |   Breed = greatdane: Transfer (0.0)
+|   |   |   |   Breed = chesabayretr: Transfer (0.0)
+|   |   |   |   Breed = germanshepherd: Return_to_owner (7.0/2.0)
+|   |   |   |   Breed = englishpointer: Transfer (0.0)
+|   |   |   |   Breed = cockerspaniel: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = domesticshorthair: Euthanasia (1.0)
+|   |   |   |   Breed = shihtzu: Transfer (9.0)
+|   |   |   |   Breed = dachshund: Transfer (5.06/1.06)
+|   |   |   |   Breed = anatolshepherd: Return_to_owner (1.0)
+|   |   |   |   Breed = labradorretriever: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = englishbulldog: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = bassethound: Transfer (0.0)
+|   |   |   |   Breed = boxer: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = miniaturepoodle: Transfer (0.0)
+|   |   |   |   Breed = dobermanpinsch: Transfer (0.0)
+|   |   |   |   Breed = harrier: Transfer (0.0)
+|   |   |   |   Breed = burmese: Transfer (0.0)
+|   |   |   |   Breed = domesticmediumhair: Transfer (0.0)
+|   |   |   |   Breed = bordercollie: Transfer (0.0)
+|   |   |   |   Breed = vizsla: Transfer (0.0)
+|   |   |   |   Breed = yorkshireterrier: Return_to_owner (2.0)
+|   |   |   |   Breed = bullterrier: Transfer (0.0)
+|   |   |   |   Breed = jackrussellterrier: Transfer (0.0)
+|   |   |   |   Breed = pekingese: Transfer (0.0)
+|   |   |   |   Breed = americanpitbullterrier: Transfer (0.0)
+|   |   |   |   Breed = miniatureschnauzer: Transfer (1.0)
+|   |   |   |   Breed = rottweiler
+|   |   |   |   |   Weekday <= 4: Euthanasia (2.0)
+|   |   |   |   |   Weekday > 4: Return_to_owner (2.0/1.0)
+|   |   |   |   Breed = greatpyrenees: Transfer (2.0)
+|   |   |   |   Breed = australianshepherd: Transfer (0.0)
+|   |   |   |   Breed = greyhound: Transfer (2.0)
+|   |   |   |   Breed = bernesemountaindog: Transfer (0.0)
+|   |   |   |   Breed = chihuahualonghair: Transfer (0.0)
+|   |   |   |   Breed = pembrokewelshcorgi: Transfer (0.0)
+|   |   |   |   Breed = australiancattledog: Transfer (0.0)
+|   |   |   |   Breed = shetlandsheepdog: Transfer (0.0)
+|   |   |   |   Breed = weimaraner: Transfer (0.0)
+|   |   |   |   Breed = miniaturepinscher: Transfer (0.0)
+|   |   |   |   Breed = bostonterrier: Transfer (0.0)
+|   |   |   |   Breed = siamese: Transfer (0.0)
+|   |   |   |   Breed = carolinadog: Transfer (0.0)
+|   |   |   |   Breed = goldenretriever: Transfer (0.0)
+|   |   |   |   Breed = pug: Transfer (0.0)
+|   |   |   |   Breed = dogoargentino: Transfer (0.0)
+|   |   |   |   Breed = cavalierspan: Transfer (0.0)
+|   |   |   |   Breed = staffordshire: Transfer (0.0)
+|   |   |   |   Breed = ratterrier: Transfer (0.0)
+|   |   |   |   Breed = akita: Transfer (0.0)
+|   |   |   |   Breed = chowchow: Transfer (0.0)
+|   |   |   |   Breed = americanfoxhound: Transfer (0.0)
+|   |   |   |   Breed = dachshundwirehair: Transfer (0.0)
+|   |   |   |   Breed = parsonrussellterrier: Transfer (0.0)
+|   |   |   |   Breed = bengal: Transfer (0.0)
+|   |   |   |   Breed = dalmatian: Transfer (0.0)
+|   |   |   |   Breed = oldenglishsheepdog: Transfer (0.0)
+|   |   |   |   Breed = americanbulldog: Transfer (0.0)
+|   |   |   |   Breed = catahoula: Transfer (0.0)
+|   |   |   |   Breed = chinesesharpei: Transfer (0.0)
+|   |   |   |   Breed = plotthound: Transfer (0.0)
+|   |   |   |   Breed = germanshorthairpointer: Transfer (0.0)
+|   |   |   |   Breed = rhodridgeback: Transfer (0.0)
+|   |   |   |   Breed = britishshorthair: Transfer (0.0)
+|   |   |   |   Breed = bichonfrise: Transfer (0.0)
+|   |   |   |   Breed = pomeranian: Transfer (2.0)
+|   |   |   |   Breed = westhighland: Transfer (0.0)
+|   |   |   |   Breed = treeingtennessebrindle: Transfer (0.0)
+|   |   |   |   Breed = standardpoodle: Transfer (0.0)
+|   |   |   |   Breed = italiangreyhound: Transfer (0.0)
+|   |   |   |   Breed = englishspringerspaniel: Transfer (0.0)
+|   |   |   |   Breed = pointer: Transfer (1.0)
+|   |   |   |   Breed = havanese: Transfer (0.0)
+|   |   |   |   Breed = australiankelpie: Transfer (0.0)
+|   |   |   |   Breed = americanstaffordshireterrier: Euthanasia (1.0)
+|   |   |   |   Breed = softcoatedwheatenterrier: Transfer (0.0)
+|   |   |   |   Breed = canecorso: Transfer (0.0)
+|   |   |   |   Breed = standardschnauzer: Transfer (0.0)
+|   |   |   |   Breed = bloodhound: Transfer (0.0)
+|   |   |   |   Breed = belgiansheepdog: Transfer (0.0)
+|   |   |   |   Breed = pbgv: Transfer (0.0)
+|   |   |   |   Breed = leonberger: Transfer (0.0)
+|   |   |   |   Breed = welshspringerspaniel: Transfer (0.0)
+|   |   |   |   Breed = brussgriffon: Transfer (0.0)
+|   |   |   |   Breed = bullterrierminiature: Transfer (0.0)
+|   |   |   |   Breed = wirehairfoxterrier: Transfer (0.0)
+|   |   |   |   Breed = shibainu: Transfer (0.0)
+|   |   |   |   Breed = stbernardsmoothcoat: Transfer (0.0)
+|   |   |   |   Breed = toypoodle: Transfer (0.0)
+|   |   |   |   Breed = sphynx: Transfer (0.0)
+|   |   |   |   Breed = borderterrier: Transfer (0.0)
+|   |   |   |   Breed = blackmouthcur: Transfer (0.0)
+|   |   |   |   Breed = americaneskimo: Transfer (0.0)
+|   |   |   |   Breed = airedaleterrier: Transfer (0.0)
+|   |   |   |   Breed = collierough: Transfer (0.0)
+|   |   |   |   Breed = colliesmooth: Transfer (0.0)
+|   |   |   |   Breed = mainecoon: Transfer (0.0)
+|   |   |   |   Breed = tibetanspaniel: Transfer (0.0)
+|   |   |   |   Breed = himalayan: Transfer (0.0)
+|   |   |   |   Breed = novascotiaducktollingretriever: Transfer (0.0)
+|   |   |   |   Breed = norfolkterrier: Transfer (0.0)
+|   |   |   |   Breed = papillon: Transfer (0.0)
+|   |   |   |   Breed = queenslandheeler: Transfer (0.0)
+|   |   |   |   Breed = saluki: Transfer (0.0)
+|   |   |   |   Breed = bullmastiff: Transfer (0.0)
+|   |   |   |   Breed = devonrex: Transfer (1.0)
+|   |   |   |   Breed = bluelacy: Transfer (0.0)
+|   |   |   |   Breed = manx: Transfer (0.0)
+|   |   |   |   Breed = presacanario: Transfer (0.0)
+|   |   |   |   Breed = bulldog: Transfer (0.0)
+|   |   |   |   Breed = brittany: Transfer (0.0)
+|   |   |   |   Breed = snowshoe: Transfer (0.0)
+|   |   |   |   Breed = germanwirehairedpointer: Transfer (0.0)
+|   |   |   |   Breed = persian: Transfer (0.0)
+|   |   |   |   Breed = boerboel: Transfer (0.0)
+|   |   |   |   Breed = pharaohhound: Transfer (0.0)
+|   |   |   |   Breed = englishshepherd: Transfer (0.0)
+|   |   |   |   Breed = dutchshepherd: Transfer (0.0)
+|   |   |   |   Breed = japanesechin: Transfer (1.0)
+|   |   |   |   Breed = russianblue: Transfer (0.0)
+|   |   |   |   Breed = cardiganwelshcorgi: Transfer (0.0)
+|   |   |   |   Breed = finnishspitz: Return_to_owner (1.0)
+|   |   |   |   Breed = bluetickhound: Transfer (0.0)
+|   |   |   |   Breed = frenchbulldog: Transfer (0.0)
+|   |   |   |   Breed = belgianmalinois: Transfer (0.0)
+|   |   |   |   Breed = alaskanhusky: Return_to_owner (1.0)
+|   |   |   |   Breed = keeshond: Transfer (0.0)
+|   |   |   |   Breed = stbernardroughcoat: Transfer (0.0)
+|   |   |   |   Breed = ragdoll: Transfer (0.0)
+|   |   |   |   Breed = redbonehound: Transfer (0.0)
+|   |   |   |   Breed = alaskanmalamute: Transfer (0.0)
+|   |   |   |   Breed = beauceron: Transfer (0.0)
+|   |   |   SexUponOutcome = unknown
+|   |   |   |   DaysUponOutcome <= 730
+|   |   |   |   |   AnimalType = Dog: Return_to_owner (3.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (5.0)
+|   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   Weekday <= 2: Return_to_owner (2.0)
+|   |   |   |   |   Weekday > 2: Euthanasia (6.0/1.0)
+|   HasName = false
+|   |   SexUponOutcome = neuteredmale
+|   |   |   DaysUponOutcome <= 300: Adoption (740.0/134.0)
+|   |   |   DaysUponOutcome > 300
+|   |   |   |   DaysUponOutcome <= 2555
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   Weekday <= 0: Adoption (50.0/13.0)
+|   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   DaysUponOutcome <= 1460: Adoption (269.0/116.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 1460: Transfer (33.0/12.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (174.0/62.0)
+|   |   |   |   DaysUponOutcome > 2555
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   Weekday <= 3
+|   |   |   |   |   |   |   Weekday <= 0: Transfer (6.0/3.0)
+|   |   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   |   DaysUponOutcome <= 3285: Return_to_owner (5.0/3.0)
+|   |   |   |   |   |   |   |   DaysUponOutcome > 3285
+|   |   |   |   |   |   |   |   |   Weekday <= 2: Euthanasia (8.0/2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 2: Transfer (5.0/2.0)
+|   |   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   |   Weekday <= 4: Euthanasia (5.0/1.0)
+|   |   |   |   |   |   |   Weekday > 4: Transfer (6.0/1.0)
+|   |   |   |   |   AnimalType = Cat: Euthanasia (43.0/11.0)
+|   |   SexUponOutcome = spayedfemale
+|   |   |   DaysUponOutcome <= 330: Adoption (748.0/119.0)
+|   |   |   DaysUponOutcome > 330
+|   |   |   |   DaysUponOutcome <= 2555
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   DaysUponOutcome <= 1095: Adoption (249.0/91.0)
+|   |   |   |   |   |   DaysUponOutcome > 1095
+|   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   Weekday <= 0: Adoption (4.0/2.0)
+|   |   |   |   |   |   |   |   Weekday > 0: Transfer (33.0/12.0)
+|   |   |   |   |   |   |   IsMixedColor = false: Adoption (18.0/7.0)
+|   |   |   |   |   AnimalType = Cat: Transfer (147.0/57.0)
+|   |   |   |   DaysUponOutcome > 2555
+|   |   |   |   |   AnimalType = Dog
+|   |   |   |   |   |   DaysUponOutcome <= 2920
+|   |   |   |   |   |   |   Weekday <= 2: Euthanasia (5.0/1.0)
+|   |   |   |   |   |   |   Weekday > 2: Transfer (4.0/2.0)
+|   |   |   |   |   |   DaysUponOutcome > 2920: Transfer (15.0/4.0)
+|   |   |   |   |   AnimalType = Cat: Euthanasia (18.0/5.0)
+|   |   SexUponOutcome = intactmale
+|   |   |   DaysUponOutcome <= 365: Transfer (885.0/188.0)
+|   |   |   DaysUponOutcome > 365
+|   |   |   |   AnimalType = Dog
+|   |   |   |   |   Weekday <= 1
+|   |   |   |   |   |   Weekday <= 0: Transfer (12.0/4.0)
+|   |   |   |   |   |   Weekday > 0
+|   |   |   |   |   |   |   DaysUponOutcome <= 730: Transfer (9.0/3.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 730: Euthanasia (10.0/2.0)
+|   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   DaysUponOutcome <= 4745: Euthanasia (100.0/38.0)
+|   |   |   |   |   |   DaysUponOutcome > 4745: Transfer (3.0)
+|   |   |   |   AnimalType = Cat
+|   |   |   |   |   DaysUponOutcome <= 2190: Transfer (186.0/60.0)
+|   |   |   |   |   DaysUponOutcome > 2190
+|   |   |   |   |   |   Weekday <= 3: Euthanasia (10.0)
+|   |   |   |   |   |   Weekday > 3
+|   |   |   |   |   |   |   Weekday <= 5: Transfer (2.0)
+|   |   |   |   |   |   |   Weekday > 5: Euthanasia (2.0)
+|   |   SexUponOutcome = intactfemale
+|   |   |   DaysUponOutcome <= 1460
+|   |   |   |   AnimalType = Dog
+|   |   |   |   |   DaysUponOutcome <= 240: Transfer (250.0/32.0)
+|   |   |   |   |   DaysUponOutcome > 240
+|   |   |   |   |   |   DaysUponOutcome <= 365: Transfer (56.0/22.0)
+|   |   |   |   |   |   DaysUponOutcome > 365
+|   |   |   |   |   |   |   DaysUponOutcome <= 730
+|   |   |   |   |   |   |   |   IsMixedColor = true
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Transfer (8.0/3.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1: Euthanasia (19.0/6.0)
+|   |   |   |   |   |   |   |   IsMixedColor = false
+|   |   |   |   |   |   |   |   |   Weekday <= 1: Euthanasia (8.0/2.0)
+|   |   |   |   |   |   |   |   |   Weekday > 1
+|   |   |   |   |   |   |   |   |   |   Weekday <= 5: Transfer (17.0/7.0)
+|   |   |   |   |   |   |   |   |   |   Weekday > 5: Euthanasia (3.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 730
+|   |   |   |   |   |   |   |   Weekday <= 1: Euthanasia (9.0/3.0)
+|   |   |   |   |   |   |   |   Weekday > 1: Transfer (24.0/7.0)
+|   |   |   |   AnimalType = Cat: Transfer (856.0/134.0)
+|   |   |   DaysUponOutcome > 1460
+|   |   |   |   DaysUponOutcome <= 2190: Transfer (36.0/16.0)
+|   |   |   |   DaysUponOutcome > 2190: Euthanasia (85.0/24.0)
+|   |   SexUponOutcome = unknown
+|   |   |   DaysUponOutcome <= 1460
+|   |   |   |   DaysUponOutcome <= 60
+|   |   |   |   |   Breed = mixed
+|   |   |   |   |   |   AnimalType = Dog: Transfer (9.0/1.0)
+|   |   |   |   |   |   AnimalType = Cat
+|   |   |   |   |   |   |   DaysUponOutcome <= 35: Euthanasia (16.0/3.0)
+|   |   |   |   |   |   |   DaysUponOutcome > 35
+|   |   |   |   |   |   |   |   Weekday <= 1: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   |   Weekday > 1: Transfer (9.0/1.0)
+|   |   |   |   |   Breed = cairnterrier: Transfer (0.0)
+|   |   |   |   |   Breed = beagle: Transfer (0.0)
+|   |   |   |   |   Breed = englishfoxhound: Transfer (0.0)
+|   |   |   |   |   Breed = domesticlonghair: Transfer (0.0)
+|   |   |   |   |   Breed = chihuahuashorthair: Transfer (0.0)
+|   |   |   |   |   Breed = lhasaapso: Transfer (0.0)
+|   |   |   |   |   Breed = pitbull: Transfer (0.0)
+|   |   |   |   |   Breed = dachshundlonghair: Transfer (0.0)
+|   |   |   |   |   Breed = maltese: Transfer (0.0)
+|   |   |   |   |   Breed = siberianhusky: Transfer (0.0)
+|   |   |   |   |   Breed = greatdane: Transfer (0.0)
+|   |   |   |   |   Breed = chesabayretr: Transfer (0.0)
+|   |   |   |   |   Breed = germanshepherd: Transfer (0.0)
+|   |   |   |   |   Breed = englishpointer: Transfer (0.0)
+|   |   |   |   |   Breed = cockerspaniel: Transfer (0.0)
+|   |   |   |   |   Breed = domesticshorthair: Transfer (2.0/1.0)
+|   |   |   |   |   Breed = shihtzu: Transfer (0.0)
+|   |   |   |   |   Breed = dachshund: Transfer (0.0)
+|   |   |   |   |   Breed = anatolshepherd: Transfer (0.0)
+|   |   |   |   |   Breed = labradorretriever: Transfer (0.0)
+|   |   |   |   |   Breed = englishbulldog: Transfer (0.0)
+|   |   |   |   |   Breed = bassethound: Transfer (0.0)
+|   |   |   |   |   Breed = boxer: Transfer (0.0)
+|   |   |   |   |   Breed = miniaturepoodle: Transfer (0.0)
+|   |   |   |   |   Breed = dobermanpinsch: Transfer (0.0)
+|   |   |   |   |   Breed = harrier: Transfer (0.0)
+|   |   |   |   |   Breed = burmese: Transfer (0.0)
+|   |   |   |   |   Breed = domesticmediumhair: Transfer (0.0)
+|   |   |   |   |   Breed = bordercollie: Transfer (0.0)
+|   |   |   |   |   Breed = vizsla: Transfer (0.0)
+|   |   |   |   |   Breed = yorkshireterrier: Transfer (0.0)
+|   |   |   |   |   Breed = bullterrier: Transfer (0.0)
+|   |   |   |   |   Breed = jackrussellterrier: Transfer (0.0)
+|   |   |   |   |   Breed = pekingese: Transfer (0.0)
+|   |   |   |   |   Breed = americanpitbullterrier: Transfer (0.0)
+|   |   |   |   |   Breed = miniatureschnauzer: Transfer (0.0)
+|   |   |   |   |   Breed = rottweiler: Transfer (0.0)
+|   |   |   |   |   Breed = greatpyrenees: Transfer (0.0)
+|   |   |   |   |   Breed = australianshepherd: Transfer (0.0)
+|   |   |   |   |   Breed = greyhound: Transfer (0.0)
+|   |   |   |   |   Breed = bernesemountaindog: Transfer (0.0)
+|   |   |   |   |   Breed = chihuahualonghair: Transfer (0.0)
+|   |   |   |   |   Breed = pembrokewelshcorgi: Transfer (0.0)
+|   |   |   |   |   Breed = australiancattledog: Transfer (0.0)
+|   |   |   |   |   Breed = shetlandsheepdog: Transfer (0.0)
+|   |   |   |   |   Breed = weimaraner: Transfer (0.0)
+|   |   |   |   |   Breed = miniaturepinscher: Transfer (0.0)
+|   |   |   |   |   Breed = bostonterrier: Transfer (0.0)
+|   |   |   |   |   Breed = siamese: Transfer (0.0)
+|   |   |   |   |   Breed = carolinadog: Transfer (0.0)
+|   |   |   |   |   Breed = goldenretriever: Transfer (0.0)
+|   |   |   |   |   Breed = pug: Transfer (0.0)
+|   |   |   |   |   Breed = dogoargentino: Transfer (0.0)
+|   |   |   |   |   Breed = cavalierspan: Transfer (0.0)
+|   |   |   |   |   Breed = staffordshire: Transfer (0.0)
+|   |   |   |   |   Breed = ratterrier: Transfer (0.0)
+|   |   |   |   |   Breed = akita: Transfer (0.0)
+|   |   |   |   |   Breed = chowchow: Transfer (0.0)
+|   |   |   |   |   Breed = americanfoxhound: Transfer (0.0)
+|   |   |   |   |   Breed = dachshundwirehair: Transfer (0.0)
+|   |   |   |   |   Breed = parsonrussellterrier: Transfer (0.0)
+|   |   |   |   |   Breed = bengal: Transfer (0.0)
+|   |   |   |   |   Breed = dalmatian: Transfer (0.0)
+|   |   |   |   |   Breed = oldenglishsheepdog: Transfer (0.0)
+|   |   |   |   |   Breed = americanbulldog: Transfer (0.0)
+|   |   |   |   |   Breed = catahoula: Transfer (0.0)
+|   |   |   |   |   Breed = chinesesharpei: Transfer (0.0)
+|   |   |   |   |   Breed = plotthound: Transfer (0.0)
+|   |   |   |   |   Breed = germanshorthairpointer: Transfer (0.0)
+|   |   |   |   |   Breed = rhodridgeback: Transfer (0.0)
+|   |   |   |   |   Breed = britishshorthair: Transfer (0.0)
+|   |   |   |   |   Breed = bichonfrise: Transfer (0.0)
+|   |   |   |   |   Breed = pomeranian: Transfer (0.0)
+|   |   |   |   |   Breed = westhighland: Transfer (0.0)
+|   |   |   |   |   Breed = treeingtennessebrindle: Transfer (0.0)
+|   |   |   |   |   Breed = standardpoodle: Transfer (0.0)
+|   |   |   |   |   Breed = italiangreyhound: Transfer (0.0)
+|   |   |   |   |   Breed = englishspringerspaniel: Transfer (0.0)
+|   |   |   |   |   Breed = pointer: Transfer (0.0)
+|   |   |   |   |   Breed = havanese: Transfer (0.0)
+|   |   |   |   |   Breed = australiankelpie: Transfer (0.0)
+|   |   |   |   |   Breed = americanstaffordshireterrier: Transfer (0.0)
+|   |   |   |   |   Breed = softcoatedwheatenterrier: Transfer (0.0)
+|   |   |   |   |   Breed = canecorso: Transfer (0.0)
+|   |   |   |   |   Breed = standardschnauzer: Transfer (0.0)
+|   |   |   |   |   Breed = bloodhound: Transfer (0.0)
+|   |   |   |   |   Breed = belgiansheepdog: Transfer (0.0)
+|   |   |   |   |   Breed = pbgv: Transfer (0.0)
+|   |   |   |   |   Breed = leonberger: Transfer (0.0)
+|   |   |   |   |   Breed = welshspringerspaniel: Transfer (0.0)
+|   |   |   |   |   Breed = brussgriffon: Transfer (0.0)
+|   |   |   |   |   Breed = bullterrierminiature: Transfer (0.0)
+|   |   |   |   |   Breed = wirehairfoxterrier: Transfer (0.0)
+|   |   |   |   |   Breed = shibainu: Transfer (0.0)
+|   |   |   |   |   Breed = stbernardsmoothcoat: Transfer (0.0)
+|   |   |   |   |   Breed = toypoodle: Transfer (0.0)
+|   |   |   |   |   Breed = sphynx: Transfer (0.0)
+|   |   |   |   |   Breed = borderterrier: Transfer (0.0)
+|   |   |   |   |   Breed = blackmouthcur: Transfer (0.0)
+|   |   |   |   |   Breed = americaneskimo: Transfer (0.0)
+|   |   |   |   |   Breed = airedaleterrier: Transfer (0.0)
+|   |   |   |   |   Breed = collierough: Transfer (0.0)
+|   |   |   |   |   Breed = colliesmooth: Transfer (0.0)
+|   |   |   |   |   Breed = mainecoon: Transfer (0.0)
+|   |   |   |   |   Breed = tibetanspaniel: Transfer (0.0)
+|   |   |   |   |   Breed = himalayan: Transfer (0.0)
+|   |   |   |   |   Breed = novascotiaducktollingretriever: Transfer (0.0)
+|   |   |   |   |   Breed = norfolkterrier: Transfer (0.0)
+|   |   |   |   |   Breed = papillon: Transfer (0.0)
+|   |   |   |   |   Breed = queenslandheeler: Transfer (0.0)
+|   |   |   |   |   Breed = saluki: Transfer (0.0)
+|   |   |   |   |   Breed = bullmastiff: Transfer (0.0)
+|   |   |   |   |   Breed = devonrex: Transfer (0.0)
+|   |   |   |   |   Breed = bluelacy: Transfer (0.0)
+|   |   |   |   |   Breed = manx: Transfer (0.0)
+|   |   |   |   |   Breed = presacanario: Transfer (0.0)
+|   |   |   |   |   Breed = bulldog: Transfer (0.0)
+|   |   |   |   |   Breed = brittany: Transfer (0.0)
+|   |   |   |   |   Breed = snowshoe: Transfer (0.0)
+|   |   |   |   |   Breed = germanwirehairedpointer: Transfer (0.0)
+|   |   |   |   |   Breed = persian: Transfer (0.0)
+|   |   |   |   |   Breed = boerboel: Transfer (0.0)
+|   |   |   |   |   Breed = pharaohhound: Transfer (0.0)
+|   |   |   |   |   Breed = englishshepherd: Transfer (0.0)
+|   |   |   |   |   Breed = dutchshepherd: Transfer (0.0)
+|   |   |   |   |   Breed = japanesechin: Transfer (0.0)
+|   |   |   |   |   Breed = russianblue: Transfer (0.0)
+|   |   |   |   |   Breed = cardiganwelshcorgi: Transfer (0.0)
+|   |   |   |   |   Breed = finnishspitz: Transfer (0.0)
+|   |   |   |   |   Breed = bluetickhound: Transfer (0.0)
+|   |   |   |   |   Breed = frenchbulldog: Transfer (0.0)
+|   |   |   |   |   Breed = belgianmalinois: Transfer (0.0)
+|   |   |   |   |   Breed = alaskanhusky: Transfer (0.0)
+|   |   |   |   |   Breed = keeshond: Transfer (0.0)
+|   |   |   |   |   Breed = stbernardroughcoat: Transfer (0.0)
+|   |   |   |   |   Breed = ragdoll: Transfer (0.0)
+|   |   |   |   |   Breed = redbonehound: Transfer (0.0)
+|   |   |   |   |   Breed = alaskanmalamute: Transfer (0.0)
+|   |   |   |   |   Breed = beauceron: Transfer (0.0)
+|   |   |   |   DaysUponOutcome > 60: Transfer (339.0/43.0)
+|   |   |   DaysUponOutcome > 1460: Euthanasia (19.0/6.0)
+
+Number of Leaves  :   593
+
+Size of the tree :  759
+
+
+Time taken to build model: 0.88 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       17417               65.1614 %
+Incorrectly Classified Instances      9312               34.8386 %
+Kappa statistic                          0.4713
+Mean absolute error                      0.1853
+Root mean squared error                  0.3081
+Relative absolute error                 68.3449 %
+Root relative squared error             83.6632 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.468    0.120    0.459      0.468    0.463      0.345    0.816     0.435     Return_to_owner
+                 0.150    0.008    0.552      0.150    0.236      0.267    0.803     0.268     Euthanasia
+                 0.821    0.272    0.671      0.821    0.738      0.538    0.854     0.754     Adoption
+                 0.648    0.123    0.741      0.648    0.691      0.543    0.811     0.749     Transfer
+                 0.000    0.000    0.000      0.000    0.000      -0.001   0.751     0.031     Died
+Weighted Avg.    0.652    0.175    0.646      0.652    0.638      0.485    0.829     0.662     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 2238   32 1958  558    0 |    a = Return_to_owner
+  381  233  197  744    0 |    b = Euthanasia
+ 1231   14 8841  682    1 |    c = Adoption
+ 1015  133 2166 6105    3 |    d = Transfer
+   12   10   22  153    0 |    e = Died
+
+
+
+
+
+
+
+
+
+
+
+
+   === Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       20872               78.0875 %
+Incorrectly Classified Instances      5857               21.9125 %
+Kappa statistic                          0.6747
+Mean absolute error                      0.0992
+Root mean squared error                  0.278 
+Relative absolute error                 36.5797 %
+Root relative squared error             75.4876 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.422    0.077    0.545      0.422    0.476      0.383    0.750     0.427     Return_to_owner
+                 0.886    0.015    0.787      0.886    0.834      0.824    0.951     0.777     Euthanasia
+                 0.741    0.117    0.810      0.741    0.774      0.635    0.866     0.802     Adoption
+                 0.997    0.110    0.831      0.997    0.906      0.857    0.966     0.901     Transfer
+                 0.497    0.001    0.867      0.497    0.632      0.655    0.808     0.480     Died
+Weighted Avg.    0.781    0.101    0.769      0.781    0.770      0.679    0.885     0.766     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 2022  235 1783  741    5 |    a = Return_to_owner
+   56 1377   47   73    2 |    b = Euthanasia
+ 1615  121 7985 1040    8 |    c = Adoption
+    9    4   19 9390    0 |    d = Transfer
+    7   12   22   58   98 |    e = Died
+
+
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 2 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 2 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21226               79.4119 %
+Incorrectly Classified Instances      5503               20.5881 %
+Kappa statistic                          0.6959
+Mean absolute error                      0.1021
+Root mean squared error                  0.2553
+Relative absolute error                 37.6584 %
+Root relative squared error             69.3223 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.499    0.094    0.537      0.499    0.517      0.417    0.790     0.467     Return_to_owner
+                 0.855    0.015    0.781      0.855    0.817      0.806    0.961     0.873     Euthanasia
+                 0.751    0.116    0.814      0.751    0.781      0.644    0.896     0.842     Adoption
+                 0.994    0.071    0.884      0.994    0.936      0.902    0.986     0.957     Transfer
+                 0.279    0.000    0.982      0.279    0.435      0.522    0.823     0.508     Died
+Weighted Avg.    0.794    0.089    0.789      0.794    0.788      0.703    0.912     0.815     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 2387  199 1729  471    0 |    a = Return_to_owner
+  110 1330   61   54    0 |    b = Euthanasia
+ 1916  150 8084  618    1 |    c = Adoption
+   24    4   24 9370    0 |    d = Transfer
+    9   19   33   81   55 |    e = Died
+
+
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 5 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 5 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21426               80.1601 %
+Incorrectly Classified Instances      5303               19.8399 %
+Kappa statistic                          0.7023
+Mean absolute error                      0.1065
+Root mean squared error                  0.239 
+Relative absolute error                 39.2602 %
+Root relative squared error             64.9013 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.437    0.069    0.579      0.437    0.498      0.412    0.843     0.522     Return_to_owner
+                 0.815    0.005    0.908      0.815    0.859      0.853    0.970     0.909     Euthanasia
+                 0.802    0.133    0.803      0.802    0.803      0.670    0.924     0.878     Adoption
+                 0.998    0.089    0.859      0.998    0.923      0.883    0.997     0.991     Transfer
+                 0.147    0.000    1.000      0.147    0.257      0.382    0.859     0.565     Died
+Weighted Avg.    0.802    0.097    0.790      0.802    0.790      0.707    0.937     0.854     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 2091   90 1977  628    0 |    a = Return_to_owner
+   95 1268   88  104    0 |    b = Euthanasia
+ 1414   25 8636  694    0 |    c = Adoption
+    4    0   16 9402    0 |    d = Transfer
+    6   13   34  115   29 |    e = Died
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 10 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 10 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21552               80.6315 %
+Incorrectly Classified Instances      5177               19.3685 %
+Kappa statistic                          0.7067
+Mean absolute error                      0.1111
+Root mean squared error                  0.2348
+Relative absolute error                 40.9757 %
+Root relative squared error             63.7692 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.398    0.058    0.601      0.398    0.479      0.403    0.868     0.554     Return_to_owner
+                 0.771    0.002    0.963      0.771    0.856      0.854    0.976     0.919     Euthanasia
+                 0.839    0.150    0.791      0.839    0.814      0.683    0.932     0.892     Adoption
+                 0.998    0.085    0.864      0.998    0.926      0.888    0.999     0.997     Transfer
+                 0.056    0.000    1.000      0.056    0.106      0.235    0.875     0.605     Died
+Weighted Avg.    0.806    0.101    0.794      0.806    0.791      0.712    0.946     0.868     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1904   41 2209  632    0 |    a = Return_to_owner
+  102 1199  134  120    0 |    b = Euthanasia
+ 1154    3 9033  579    0 |    c = Adoption
+    1    0   16 9405    0 |    d = Transfer
+    8    2   31  145   11 |    e = Died
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 15 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 15 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21566               80.6839 %
+Incorrectly Classified Instances      5163               19.3161 %
+Kappa statistic                          0.7058
+Mean absolute error                      0.114 
+Root mean squared error                  0.2342
+Relative absolute error                 42.0454 %
+Root relative squared error             63.6111 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.363    0.050    0.611      0.363    0.456      0.389    0.874     0.565     Return_to_owner
+                 0.740    0.001    0.983      0.740    0.844      0.846    0.979     0.921     Euthanasia
+                 0.860    0.164    0.779      0.860    0.818      0.687    0.934     0.894     Adoption
+                 0.998    0.082    0.869      0.998    0.929      0.892    0.999     0.998     Transfer
+                 0.036    0.000    1.000      0.036    0.069      0.188    0.896     0.623     Died
+Weighted Avg.    0.807    0.104    0.794      0.807    0.788      0.711    0.948     0.871     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1738   15 2411  622    0 |    a = Return_to_owner
+  103 1151  168  133    0 |    b = Euthanasia
+  992    1 9264  512    0 |    c = Adoption
+    2    0   14 9406    0 |    d = Transfer
+    8    4   31  147    7 |    e = Died
+
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 20 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 20 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21674               81.088  %
+Incorrectly Classified Instances      5055               18.912  %
+Kappa statistic                          0.711 
+Mean absolute error                      0.1162
+Root mean squared error                  0.2342
+Relative absolute error                 42.8585 %
+Root relative squared error             63.5988 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.357    0.045    0.634      0.357    0.456      0.397    0.879     0.577     Return_to_owner
+                 0.722    0.000    0.990      0.722    0.835      0.838    0.981     0.923     Euthanasia
+                 0.877    0.172    0.775      0.877    0.823      0.695    0.935     0.895     Adoption
+                 0.998    0.076    0.877      0.998    0.934      0.898    0.999     0.998     Transfer
+                 0.005    0.000    1.000      0.005    0.010      0.071    0.898     0.648     Died
+Weighted Avg.    0.811    0.104    0.800      0.811    0.791      0.717    0.950     0.874     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1707   10 2494  575    0 |    a = Return_to_owner
+  102 1122  193  138    0 |    b = Euthanasia
+  876    0 9442  451    0 |    c = Adoption
+    0    0   20 9402    0 |    d = Transfer
+    9    1   31  155    1 |    e = Died
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 28 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 28 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21686               81.1329 %
+Incorrectly Classified Instances      5043               18.8671 %
+Kappa statistic                          0.7108
+Mean absolute error                      0.1193
+Root mean squared error                  0.2349
+Relative absolute error                 44.0002 %
+Root relative squared error             63.7815 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.340    0.041    0.642      0.340    0.445      0.391    0.884     0.588     Return_to_owner
+                 0.688    0.000    0.995      0.688    0.814      0.820    0.984     0.926     Euthanasia
+                 0.890    0.178    0.771      0.890    0.827      0.700    0.936     0.896     Adoption
+                 0.998    0.074    0.880      0.998    0.935      0.900    0.999     0.998     Transfer
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.916     0.653     Died
+Weighted Avg.    0.811    0.105    0.794      0.811    0.790      0.717    0.952     0.877     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1628    4 2584  570    0 |    a = Return_to_owner
+  125 1070  208  152    0 |    b = Euthanasia
+  772    0 9588  409    0 |    c = Adoption
+    0    0   22 9400    0 |    d = Transfer
+   10    1   30  156    0 |    e = Died
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 27 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 27 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21717               81.2488 %
+Incorrectly Classified Instances      5012               18.7512 %
+Kappa statistic                          0.7128
+Mean absolute error                      0.1189
+Root mean squared error                  0.2347
+Relative absolute error                 43.8496 %
+Root relative squared error             63.747  %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.345    0.041    0.645      0.345    0.450      0.396    0.885     0.588     Return_to_owner
+                 0.698    0.000    0.995      0.698    0.821      0.826    0.983     0.925     Euthanasia
+                 0.889    0.176    0.773      0.889    0.827      0.702    0.936     0.896     Adoption
+                 0.998    0.074    0.880      0.998    0.935      0.901    0.999     0.998     Transfer
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.926     0.658     Died
+Weighted Avg.    0.812    0.105    0.795      0.812    0.791      0.719    0.952     0.877     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1653    4 2557  572    0 |    a = Return_to_owner
+  120 1086  201  148    0 |    b = Euthanasia
+  779    0 9577  413    0 |    c = Adoption
+    0    0   21 9401    0 |    d = Transfer
+   11    1   31  154    0 |    e = Died
+
+
+
+
+
+
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 26 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     refined_train
+Instances:    26729
+Attributes:   11
+              HasName
+              Weekday
+              OutcomeType
+              OutcomeSubtype
+              AnimalType
+              SexUponOutcome
+              DaysUponOutcome
+              Breed
+              Color1
+              Color2
+              IsMixedColor
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 26 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       21709               81.2189 %
+Incorrectly Classified Instances      5020               18.7811 %
+Kappa statistic                          0.7124
+Mean absolute error                      0.1185
+Root mean squared error                  0.2347
+Relative absolute error                 43.7167 %
+Root relative squared error             63.7332 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.347    0.042    0.643      0.347    0.451      0.396    0.884     0.585     Return_to_owner
+                 0.702    0.000    0.995      0.702    0.823      0.828    0.984     0.925     Euthanasia
+                 0.887    0.176    0.773      0.887    0.826      0.700    0.935     0.896     Adoption
+                 0.998    0.074    0.880      0.998    0.935      0.901    0.999     0.998     Transfer
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.924     0.660     Died
+Weighted Avg.    0.812    0.105    0.795      0.812    0.791      0.719    0.951     0.876     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 1663    5 2549  569    0 |    a = Return_to_owner
+  116 1091  205  143    0 |    b = Euthanasia
+  800    0 9554  415    0 |    c = Adoption
+    0    0   21 9401    0 |    d = Transfer
+    9    1   31  156    0 |    e = Died
+
