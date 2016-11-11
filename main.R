@@ -1,7 +1,7 @@
-
 source(file="include/normalize.R")
 source(file="include/numerize.R")
 source(file="include/rename.R")
+source(file="include/clean_string.R")
 
 sourceFile = "csv/train.csv";
 targetFile = "csv/refined_train.csv";
@@ -63,7 +63,7 @@ data$DateTime = lapply(data$DateTime, {function(str) {
 }});
 
 data$DateTime = numerize(unlist(data$DateTime), days, 0:length(days));
-
+data = rename(data, "DateTime", "Weekday");
 
 # ----------------------- Name analysis (HasName) -----------------------
 data$Name = lapply(data$Name, {function(str) {
@@ -75,6 +75,7 @@ data = rename(data, "Name", "HasName");
 
 # ------------------------- Color analysis -------------------------
 placeholder = "ZZZZ";
+clean_placeholder = tolower(placeholder);
 
 pairs = lapply(data$Color, {function(str) {
 	p = strsplit(as.character(str), "/");
@@ -84,15 +85,15 @@ pairs = lapply(data$Color, {function(str) {
 }});
 
 data$Color = lapply(pairs, {function(pair) {
-	ifelse(pair[[1]][1] < pair[[1]][2],
-		pair[[1]][1],
-		pair[[1]][2])
+	first = clean_string(pair[[1]][1]);
+	second = clean_string(pair[[1]][2]);
+	ifelse(first < second, first, second);
 }});
 
 data$Color2 = lapply(pairs, {function(pair) {
-	ifelse(pair[[1]][1] < pair[[1]][2],
-		pair[[1]][2],
-		pair[[1]][1])
+	first = clean_string(pair[[1]][1]);
+	second = clean_string(pair[[1]][2]);
+	ifelse(first < second, second, first);
 }});
 
 data = rename(data, "Color", "Color1");
@@ -106,17 +107,21 @@ data$IsMixedColor = lapply(pairs, {function(pair) {
 
 # ---------------------- Breed analysis (IsMixedBreed) ----------------------
 data$Breed = lapply(data$Breed, {function(str) {
-	as.integer(grepl("Mix|/", str));
+	if (grepl("Mix|/", str)) {
+		"mixed";
+	} else {
+		str = clean_string(str);
+	}
 }});
 
-data = rename(data, "Breed", "IsMixedBreed");
+#data = rename(data, "Breed", "IsMixedBreed");
 
 
 # ------------------------- Null treatment -------------------------
 data$SexUponOutcome[sapply(data$SexUponOutcome, is.na)] = 0;
 data$DaysUponOutcome[sapply(data$DaysUponOutcome, is.null)] = 0;
 data$Color2[sapply(data$Color2, {function(str) {
-	str == placeholder;
+	str == clean_placeholder;
 }})] = "";
 
 
@@ -124,7 +129,7 @@ data$Color2[sapply(data$Color2, {function(str) {
 # data$DateTime = normalize(unlist(data$DateTime));
 # data$OutcomeType = normalize(as.numeric(data$OutcomeType));
 # data$SexUponOutcome = normalize(as.numeric(data$SexUponOutcome));
-data$DaysUponOutcome = normalize(unlist(data$DaysUponOutcome));
+# data$DaysUponOutcome = normalize(unlist(data$DaysUponOutcome));
 
 
 # Save
